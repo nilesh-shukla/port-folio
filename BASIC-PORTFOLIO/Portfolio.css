@@ -10,6 +10,7 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: rgba(from color r g b);
+    overflow-x: hidden;
 }
 header 
 {
@@ -130,7 +131,7 @@ h3
 }
 
 .timeline-item img:hover {
-    cursor: pointer;
+    cursor: crosshair;
     transform: scale(1.1);
 }
 
