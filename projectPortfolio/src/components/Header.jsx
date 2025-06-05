@@ -28,7 +28,7 @@ function Header() {
 
         </nav>
 
-        <Button buttonName="Book A Call" className='booking tracking-tight bg-black rounded-2xl text-white font-dmsans font-boldness px-5 py-3 shadow-box cursor-pointer hover:bg-violet-600 duration-400' />
+        <Button buttonName="Book A Call" className='booking tracking-tight bg-black rounded-2xl text-white font-dmsans px-5 py-3 shadow-box cursor-pointer hover:bg-violet-600 duration-300' />
         
       </header>
 
@@ -57,7 +57,7 @@ function Header() {
             As a machine learning enthusiast with a growing eye for visual design and frontend development, I combine data-driven thinking with clean, responsive interfaces using React. I collaborate to build intelligent, user-aware products that bridge functionality and experience
             </p>
 
-          <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-400 cursor-pointer tracking-tight font-dmsans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
+          <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-dmsans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
           </div>
 
         </div>
