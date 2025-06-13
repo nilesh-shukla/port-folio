@@ -11,7 +11,7 @@ function Header() {
 
       {/* NAVIGATION BAR */}
 
-      <header className='fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-3 bg-white'>
+      <header className='fixed top-0 left-0 w-full z-500 flex justify-between items-center px-8 py-2 bg-white'>
         
         <a className='hover:text-gray-600 duration-200' href="#">
         <h1 className='text-xl tracking-tighter font-dmsans'>Nilesh Shukla</h1></a>
