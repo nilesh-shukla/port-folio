@@ -6,6 +6,7 @@ import imgProject1 from "./assets/AI.png";
 import imgProject2 from "./assets/india_tour.jpg";
 import imgProject3 from "./assets/leave_form.png";
 import imgProject4 from "./assets/CarbonWisePoster.png"
+import clientImage from "./assets/group.jpg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faAward, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
@@ -17,12 +18,12 @@ function App() {
     <>
       <Header />
 
-      <div className='p-30 bg-black'>
+      <div className='p-30'>
       
             {/* Heading */}
               <div className='flex justify-between items-center mb-8'>
       
-                <h1 className='text-4xl text-dmsans font-boldness tracking-tighter text-white'>Crafted Concepts</h1>
+                <h1 className='text-4xl text-dmsans font-boldness tracking-tighter text-black'>Crafted Concepts</h1>
                 <Button buttonName="All Works" className="works tracking-tight bg-gray-200 text-black font-dmsans px-5 py-3 cursor-pointer rounded-2xl hover:bg-purple-600 hover:text-white duration-300" >
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2 text-sm" />
                 </Button>
@@ -60,28 +61,37 @@ function App() {
 
       </div>
 
-      <div className="flex p-30 justify-center gap-2.5">
+      <div className="grid grid-cols-3 items-stretch px-40 py-20 justify-center gap-2.5">
         
-
-        <Achievement className={" "} bgColor={"bg-gray-100"}>
-          
+        <Achievement bgColor={"bg-gray-100"}>          
           <div className="flex">
-
             <h1 className="text-3xl font-sans font-bold mr-2">W.</h1>
             <FontAwesomeIcon icon={faAward} className="text-3xl mt-1 text-yellow-400" />
-
-          </div>
-          
-  
+          </div> 
         </Achievement>
 
-        <Achievement className={"shadow-box z-10 w-[33%]"} bgColor={"bg-black"}>
+        <Achievement className={"shadow-box z-10 h-full"} bgColor={"bg-black"}>
           <FontAwesomeIcon icon={faQuoteRight} className="text-4xl text-gray-600" />
 
-          <p className="text-white text-2xl mt-2 font-dmsans">Shukla’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
+          <p className="text-white text-2xl mt-2 font-dmsans">Nilesh’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
+
+          <div className="flex gap-3 mt-30">
+            <img src={clientImage} alt="client"  className="w-8 h-8 mt-2 rounded-lg"/>
+            <div className="flex flex-col">
+              <p className="text-white">Divyanshu Chaubey</p>
+              <p className="text-gray-500">Founder at Nexatech</p>
+            </div>
+          </div>
+
         </Achievement>
 
-        <Achievement className={" "} bgColor={"bg-gray-100"}></Achievement>
+        <Achievement className={"relative group flex flex-col gap-2 text-xl justify-center items-center"} bgColor={"bg-gray-100"}>
+
+          <button className="absolute w-[80%] text-left transition duration-500 group-hover:translate-y-0 z-30 bg-white rounded-2xl p-3 translate-y-0 shadow-xl">4+ Projects Completed</button>
+          <button className="absolute w-[75%] text-left transition duration-500 group-hover:translate-y-14 group-hover:w-[80%] z-20 bg-white rounded-2xl p-3 translate-y-3 shadow-xl ease-in-out">2+ Years Experience</button>
+          <button className="absolute w-[70%] text-left transition duration-500 group-hover:translate-y-28 group-hover:w-[80%] z-10 bg-white rounded-2xl p-3 translate-y-6 shadow-xl ease-in-out">10+ Happy Clients</button>
+
+        </Achievement>
 
 
       </div>
