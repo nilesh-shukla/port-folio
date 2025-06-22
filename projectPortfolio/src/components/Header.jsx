@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from './Button';
 import myface from '../assets/myFace.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

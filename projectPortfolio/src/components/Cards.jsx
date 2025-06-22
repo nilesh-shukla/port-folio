@@ -1,5 +1,4 @@
-import React from 'react'
-import Button from './Button'
+
 
 function Cards({textColor,className, projectName, imgName, children}) {
   return (

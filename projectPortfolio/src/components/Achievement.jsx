@@ -1,4 +1,3 @@
-import React, { PureComponent } from 'react'
 
 function Achievement({ className, bgColor, children }) {
   return (
