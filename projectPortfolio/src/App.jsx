@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Cards from "./components/Cards";
 import Button from "./components/Button"; 
+import Services from "./components/Services"
 import Achievement from "./components/Achievement";
 import imgProject1 from "./assets/AI.png";
 import imgProject2 from "./assets/india_tour.jpg";
@@ -8,8 +9,12 @@ import imgProject3 from "./assets/leave_form.png";
 import imgProject4 from "./assets/CarbonWisePoster.png"
 import clientImage from "./assets/group.jpg";
 
+import ml1 from "./assets/ml1.jpg";
+import ml2 from "./assets/ml2.webp";
+import ml3 from "./assets/ml3.png";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmile, faRightToBracket, faHexagonNodes, faAtom, faChartSimple} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   
@@ -74,8 +79,15 @@ function App() {
             <p className="text-gray-600">Recognized as Excellence in Web Design and innovative Machine Learning Models</p>
           </div>
 
-          <div className="relative w-full h-full transition-transform duration-500 ease-in-out translate-y-10 group-hover:-translate-y-[20%] from-gray-300 to-gray-500 group-hover:cursor-pointer ">
-            <iframe src="../public/Asaan-Yatra/AY.html" className="w-full h-full overflow-hidden rounded-xl border-none pointer-events-none " scrolling="no" title="Website Preview" />
+          <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-5 group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
+            <img src="../public/WinnerPage.jpg" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
+
+            <button className="absolute top-2 right-3 p-3 bg-gray-500 rounded-xl opacity-0 group-hover:opacity-100 duration-300" >
+              <a href="../public/ASAAN-YATRA/AY.html" target="_blank">
+                <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
+              </a>
+            </button>
+
           </div>
 
         </Achievement>
@@ -119,9 +131,29 @@ function App() {
 
         </Achievement>
 
-
       </div>
 
+      <div className="px-40 py-20">
+        <div className="flex justify-between gap-[35%] mb-10">
+          <h1 className="text-xl font-ralway text-gray-500">Services</h1>
+          <p className="text-4xl font-dmsans" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
+        </div>
+
+        <div className='flex justify-between items-center'>
+          <Services headingName={"Machine Learning"} icon={faHexagonNodes} iconColor={"text-yellow-300"} iconBgColor={"bg-yellow-100"} bgColor={"bg-gray-50"} contentBgColor={"bg-white"} describe={"An ML project is vital for extracting insights from data, enabling predictions, automation, and smarter decisions. It drives innovation, improves efficiency, and supports intelligent solutions across various industries."} textColor={"text-gray-400"}>
+
+            <div className='flex gap-1 p-1'>
+              <img src={ml1} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
+              <img src={ml2} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
+              <img src={ml3} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
+            </div>
+          </Services>
+          <Services headingName={"React Developer"} icon={faAtom}></Services>
+          <Services headingName={"Data Analyst"} icon={faChartSimple}></Services>
+        </div>
+
+      </div>
+      
     </>
   )
 }
