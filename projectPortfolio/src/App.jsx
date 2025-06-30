@@ -3,18 +3,25 @@ import Cards from "./components/Cards";
 import Button from "./components/Button"; 
 import Services from "./components/Services"
 import Achievement from "./components/Achievement";
+import StepBullet from "./components/StepBullet";
+
 import imgProject1 from "./assets/AI.png";
 import imgProject2 from "./assets/india_tour.jpg";
 import imgProject3 from "./assets/leave_form.png";
 import imgProject4 from "./assets/CarbonWisePoster.png"
 import clientImage from "./assets/group.jpg";
-
 import ml1 from "./assets/ml1.jpg";
 import ml2 from "./assets/ml2.webp";
 import ml3 from "./assets/ml3.png";
+import react1 from "./assets/react1.avif";
+import react2 from "./assets/react2.jpeg";
+import react3 from "./assets/react3.webp";
+import da1 from "./assets/da1.jpg";
+import da2 from "./assets/da2.jpg";
+import da3 from "./assets/da3.jpg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmile, faRightToBracket, faHexagonNodes, faAtom, faChartSimple} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmile, faRightToBracket, faHexagonNodes, faIcons, faChartSimple} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   
@@ -139,17 +146,51 @@ function App() {
           <p className="text-4xl font-dmsans" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
         </div>
 
-        <div className='flex justify-between items-center'>
-          <Services headingName={"Machine Learning"} icon={faHexagonNodes} iconColor={"text-yellow-300"} iconBgColor={"bg-yellow-100"} bgColor={"bg-gray-50"} contentBgColor={"bg-white"} describe={"An ML project is vital for extracting insights from data, enabling predictions, automation, and smarter decisions. It drives innovation, improves efficiency, and supports intelligent solutions across various industries."} textColor={"text-gray-400"}>
+        <div className='flex justify-between items-center gap-2'>
 
-            <div className='flex gap-1 p-1'>
-              <img src={ml1} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
-              <img src={ml2} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
-              <img src={ml3} alt="Image" className=" rounded-2xl object-cover w-1/3"/>
-            </div>
+          <Services headingName={"Machine Learning"} icon={faHexagonNodes} iconColor={"text-yellow-300"} iconBgColor={"bg-yellow-100"} bgColor={"bg-gray-100"} contentBgColor={"bg-white"} describe={"An ML project is vital for extracting insights from data, enabling predictions, automation, and smarter decisions. It drives innovation, improves efficiency, and supports intelligent solutions across various industries."} textColor={"text-gray-400"} tag={["Python", "Machine Learning", "Data Science", "Artificial Intelligence"]} tagBgColor={"bg-gray-100"} >
+              <img src={ml1} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+              <img src={ml2} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+              <img src={ml3} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
           </Services>
-          <Services headingName={"React Developer"} icon={faAtom}></Services>
-          <Services headingName={"Data Analyst"} icon={faChartSimple}></Services>
+
+          <Services headingName={"React Developement"} headingColor={"text-white"} icon={faIcons} iconColor={"text-[#7430f7]"} iconBgColor={"bg-purple-100"} bgColor={"bg-black"} contentBgColor={"bg-[#7430f7]"} describe={"A React project helps create responsive, dynamic user interfaces using reusable components. It enhances development speed, code maintainability, and delivers smooth experiences across modern applications."} textColor={"text-white"} tag={["JavaScript","Web Development","Designing","+more"]} tagBgColor={"bg-[#7430f7]"} customClass="border-1 border-white">
+            <img src={react1} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+            <img src={react2} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+            <img src={react3} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+          </Services>
+
+          <Services headingName={"Data Analysis"} icon={faChartSimple} iconColor={"text-green-300"} iconBgColor={"bg-green-100"} bgColor={"bg-gray-100"} contentBgColor={"bg-white"} describe={"Data Analysis focuses on interpreting and visualizing data to drive informed decision-making. It involves data collection, cleaning, and analysis to uncover insights and trends that can benefit businesses."} textColor={"text-gray-400"} tag={["Data Analysis", "Business Intelligence", "Visualization", "Reporting"]} tagBgColor={"bg-gray-100"}>
+            <img src={da1} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+            <img src={da2} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+            <img src={da3} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
+          </Services>
+        </div>
+
+      </div>
+
+      <div className="px-40 py-20 bg-[url('./assets/background.webp')] bg-cover bg-no-repeat">
+
+        <div className="flex justify-between gap-[30%]">
+          <h1 className=" text-xl font-ralway text-gray-500 whitespace-nowrap">How it works</h1>
+
+          <div className="flex flex-col">
+            <p className="text-4xl font-dmsans text-white mb-14" style={{fontWeight: 500}}>A simple and efficient workflow to bring your vision to life.<span className="text-gray-500">From the first call to final delivery, every step is designed for clarity and efficiency.</span></p>
+
+            <div className="flex flex-col gap-4">
+              <StepBullet number={1} heading={"Book A Call"} paragraph={"Let’s start with a conversation! We’ll discuss your goals, ideas, and how I can help bring them to life. This is where we align expectations and ensure a great fit"}/>
+              <StepBullet number={2} heading={"Project Brief"} paragraph={"Once we’re on the same page, we’ll define the project scope, timeline, and deliverables. A structured brief ensures a smooth and efficient process"} />
+              <StepBullet number={3} heading={"Develop"} paragraph={"This is where the magic happens! I’ll craft thoughtful designs and refine them based on feedback, ensuring the final outcome meets your vision and goals"}/>
+              <StepBullet number={4} heading={"Deliver"} paragraph={"The final product is polished and ready to go. Whether it’s a brand identity, UI/UX design, or a Framer website, you’ll receive all the necessary files and guidance for a seamless handoff"}/>
+              <StepBullet number={5} heading={"Support"} paragraph={"Enjoy one month of free support after project delivery. I’ll be available to answer questions, make minor adjustments, and ensure everything runs smoothly"}/>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+
         </div>
 
       </div>

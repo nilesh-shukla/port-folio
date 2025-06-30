@@ -25,3 +25,7 @@
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
+.box:nth-child(even){
+    margin-left: auto;
+}
