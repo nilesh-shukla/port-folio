@@ -21,16 +21,25 @@ import da1 from "./assets/da1.jpg";
 import da2 from "./assets/da2.jpg";
 import da3 from "./assets/da3.jpg";
 
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmile, faRightToBracket, faHexagonNodes, faIcons, faChartSimple} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+  
   return (
     <>
       <Header />
 
-      {/*Cards Section*/}
-      <div className='p-30'>
+      {/*Projects Section*/}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ amount: 0.3 }}
+        id="Projects"
+        className="p-30"
+            >
               <div className='flex justify-between items-center mb-8'>
                 <h1 className='text-4xl text-dmsans font-boldness tracking-tighter text-black'>Crafted Concepts</h1>
                 <Button buttonName="All Works" className="works tracking-tight bg-gray-200 text-black font-isans px-5 py-3 cursor-pointer rounded-2xl hover:bg-purple-600 hover:text-white duration-300" >
@@ -54,10 +63,17 @@ function App() {
                 <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-lg">React</button>    
               </Cards>
               </div>
-      </div>
+      </motion.div>
 
       {/* Achievement Section */}
-      <div className="grid grid-cols-3 items-stretch px-40 py-20 justify-center gap-2.5">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ amount: 0.3 }}
+        id="Projects"
+        className="grid grid-cols-3 items-stretch px-40 py-20 justify-center gap-2.5"
+      >
         <Achievement className={"overflow-hidden group"} bgColor={"bg-gray-100"}>          
           <div className="flex">
             <h1 className="text-3xl font-sans font-bold mr-2">W.</h1>
@@ -105,10 +121,17 @@ function App() {
             <FontAwesomeIcon icon={faFaceSmile} className="text-xl text-yellow-500" />
           </button>
         </Achievement>
-      </div>
+      </motion.div>
 
       {/* Service Section */}
-      <div className="px-40 py-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ amount: 0.3 }}
+        id="Projects"
+        className=" px-40 py-20 "
+      >
         <div className="flex justify-between gap-[35%] mb-10">
           <h1 className="text-xl font-isans text-gray-500">Services</h1>
           <p className="text-4xl font-isans" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
@@ -130,10 +153,17 @@ function App() {
             <img src={da3} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
           </Services>
         </div>
-      </div>
+      </motion.div>
 
       {/* How I work */}
-      <div className="px-40 py-20 bg-[url('./assets/background.webp')] bg-cover bg-no-repeat">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ amount: 0.3 }}
+        id="Projects"
+        className="px-40 py-20 bg-[url('./assets/background.webp')] bg-cover bg-no-repeat"
+      >
         <div className="flex justify-between gap-[30%]">
           <h1 className=" text-xl font-isans text-gray-500 whitespace-nowrap">How it works</h1>
           <div className="flex flex-col">
@@ -147,10 +177,17 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Frequently Asked */}
-      <div className="p-40">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ amount: 0.3 }}
+        id="Projects"
+        className="p-40"
+      >
         <div className="flex gap-10">
           <div className="font-isans flex flex-col w-1/2">
             <div className="flex items-center overflow-hidden">
@@ -173,11 +210,18 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Footer Section */}
-      <div className="px-40 py-35 font-isans bg-[url('./assets/background.webp')]">
-         <div className="flex gap-12">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
+        id="Projects"
+        className="px-40 py-35 font-isans bg-[url('./assets/background.webp')]"
+      >
+        <div className="flex gap-12">
           <img src="../src/assets/myImage.avif" alt="myImage" className="w-[40%] rounded-3xl" />
           <div className="relative flex flex-col w-[50%]">
             <p className="text-[4em] tracking-tight leading-tight text-white mb-5">Book a call, and I’ll take care of the rest</p>
@@ -205,7 +249,7 @@ function App() {
             </div>
           </div>
          </div>
-      </div>
+      </motion.div>
       
     </>
   )
