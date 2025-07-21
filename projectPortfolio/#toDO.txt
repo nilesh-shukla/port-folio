@@ -1,0 +1,18 @@
+1.>> Header - image fading animation to the face image
+
+2.>> Work page
+
+3.>> About page
+
+4.>> Contact page
+
+5.>> Javascript for button funtioning
+
+6.>> Responsiveness
+
+7.>> Work image instaed of posters / FACE IMAGE
+
+8.>> Providing links to each works
+
+9.>> Deploying
+
