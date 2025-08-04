@@ -1,10 +1,12 @@
 import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import Cards from "./components/Cards";
 import Button from "./components/Button"; 
 import Services from "./components/Services"
 import Achievement from "./components/Achievement";
 import StepBullet from "./components/StepBullet";
 import FAQ from "./components/FAQ";
+import SmoothScroll from "./components/SmoothScroll";
 
 import imgProject1 from "./assets/AI.png";
 import imgProject2 from "./assets/india_tour.jpg";
@@ -29,14 +31,17 @@ function App() {
   
   return (
     <>
+
+      <Navigation />
+      <SmoothScroll>
       <Header />
 
       {/*Projects Section*/}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        viewport={{ amount: 0.1 }}
         id="Projects"
         className="p-30"
             >
@@ -69,8 +74,8 @@ function App() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        viewport={{ amount: 0.1 }}
         id="Projects"
         className="grid grid-cols-3 items-stretch px-40 py-20 justify-center gap-2.5"
       >
@@ -127,8 +132,8 @@ function App() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        viewport={{ amount: 0.1 }}
         id="Projects"
         className=" px-40 py-20 "
       >
@@ -251,6 +256,7 @@ function App() {
          </div>
       </motion.div>
       
+      </SmoothScroll>
     </>
   )
 }
