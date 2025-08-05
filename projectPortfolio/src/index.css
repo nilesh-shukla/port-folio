@@ -25,3 +25,7 @@
 .box:nth-child(even){
     margin-left: auto;
 }
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+}
