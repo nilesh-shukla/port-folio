@@ -2,11 +2,11 @@
 
 2.>> 
 
-3.>> About page
+3.>> About page - creating components in People section
 
 4.>> Contact page - TextFields border when clicked to be fixed
 
-5.>> Javascript for button funtioning
+5.>> Javascript for button funtioning 
 
 6.>> Responsiveness
 

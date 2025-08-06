@@ -5,8 +5,9 @@ function Navigation() {
   return (
     <>
       <header className='fixed top-0 left-0 w-full z-[9999] flex justify-between items-center px-8 py-2 bg-white'>
-        <a className='hover:text-gray-600 duration-200' href="#">
-        <h1 className='text-xl tracking-tighter font-isans font-boldness'>Nilesh Shukla</h1></a>
+        <Link to="/" className="hover:text-gray-600 duration-200">
+          <h1 className="text-xl tracking-tighter font-isans font-boldness">Nilesh Shukla</h1>
+        </Link>
         <nav className='absolute left-1/2 transform -translate-x-1/2'>
           <ul className="flex gap-7 text-sm items-center tracking text-black font-isans font-boldness">
 

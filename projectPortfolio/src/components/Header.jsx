@@ -12,9 +12,6 @@ function Header() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
     const smoothHandleScroll = () => {
       requestAnimationFrame(() => {
         setScrollY(window.scrollY);
@@ -29,7 +26,7 @@ function Header() {
   
   const backgroundY = -(scrollY * 0.2);
   const foregroundY = -(scrollY * 0.6);
-  const scrollScale = 0.9 + (scrollY / 5000);
+  const scrollScale = 0.9 + (scrollY / 8000);
 
   return (
     <motion.div
@@ -64,7 +61,7 @@ function Header() {
         <motion.div 
           className='absolute inset-0 flex flex-col justify-center px-6 md:px-5 z-50'
           animate={{
-            y: -foregroundY * 0.1,
+            y: -foregroundY * 0.0009,
           }}
           transition={{
             type: 'tween',
@@ -95,9 +92,9 @@ function Header() {
         
         {/* BLUR EFFECT SECTION */}
         <motion.div
-         className="absolute left-0 w-full h-40 pointer-events-none z-10"
+         className="absolute left-0 w-full h-50 pointer-events-none z-10"
          animate={{
-           bottom: -foregroundY * 0.1,
+           bottom: -foregroundY * 0.0009,
          }}
          transition={{
            type: 'tween',
@@ -105,7 +102,7 @@ function Header() {
            duration: isHovered ? 0.3 : 0.1
          }}
         >
-          <motion.div className="w-full h-full backdrop-blur-md mask-gradient-fade" />
+          <motion.div className="w-full h-full backdrop-blur-xl mask-gradient-fade" />
         </motion.div>
 
       </div>

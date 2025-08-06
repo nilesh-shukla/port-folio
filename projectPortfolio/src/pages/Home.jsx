@@ -47,21 +47,14 @@ function Home() {
             </div>
             
             <div className='flex flex-wrap flex-row gap-y-4 justify-between py-10'>
-            <Cards imgName={imgProject1} className="w-[49%] h-[50vh]" projectName="BugsSmith" textColor={"text-white"}>
-                <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-2 mr-2">ML</button>        
-            </Cards>            
-            <Cards imgName={imgProject2} className="w-[49%] h-[50vh] text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}>
-                <button className="bg-transparent border-1 border-gray-700 text-black px-3 py-1 rounded-xl text-lg mr-2">HTML</button>  
-                <button className="bg-transparent border-1 border-gray-700 text-black px-3 py-1 rounded-xl text-lg mr-2">CSS</button>  
-            </Cards>
-            <Cards imgName={imgProject3} className="w-[49%] h-[50vh]" projectName="LeavePoint">
-                <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-lg mr-2">JavaScript</button>
-                <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-lg mr-2">NextJS</button>  
-            </Cards>
-            <Cards imgName={imgProject4} className="w-[49%] h-[50vh]" projectName="CarbonWise" textColor={"text-white"}>
-                <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-lg mr-2">ML</button>
-                <button className="bg-transparent border-1 border-gray-300 text-white px-3 py-1 rounded-xl text-lg">React</button>    
-            </Cards>
+            <Cards imgName={imgProject1} className="w-[49%] h-[50vh]" projectName="BugsSmith" textColor={"text-white"}/>
+                                  
+            <Cards imgName={imgProject2} className="w-[49%] h-[50vh] text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}/>
+                
+            <Cards imgName={imgProject3} className="w-[49%] h-[50vh]" projectName="LeavePoint"/>
+                
+            <Cards imgName={imgProject4} className="w-[49%] h-[50vh]" projectName="CarbonWise" textColor={"text-white"}/>
+                
             </div>
     </motion.div>
 
@@ -189,26 +182,26 @@ function Home() {
         className="p-40"
     >
         <div className="flex gap-10">
-        <div className="font-isans flex flex-col w-1/2">
-            <div className="flex items-center overflow-hidden">
-            <h1 className="text-xl text-gray-500 mb-2 mr-2">FAQs</h1><hr className="w-full text-[#e4e4e4]" />
+            <div className="font-isans flex flex-col w-1/2">
+                <div className="flex items-center overflow-hidden">
+                <h1 className="text-xl text-gray-500 mb-2 mr-2">FAQs</h1><hr className="w-full text-[#e4e4e4]" />
+                </div>
+                <p className="text-4xl mb-8"><span className="text-gray-500">Answers to common questions to help you understand</span> the process and how we can work together</p>
+                <Button buttonName="Email Me" className="hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3 w-30" />
             </div>
-            <p className="text-4xl mb-8"><span className="text-gray-500">Answers to common questions to help you understand</span> the process and how we can work together</p>
-            <Button buttonName="Email Me" className="hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3 w-30" />
-        </div>
-        <div className="bg-gray-100 w-1/2 rounded-2xl p-3 flex flex-col gap-5">
-            <div className="flex justify-center items-center">
-            <button className="w-40 tracking-tight font-isans shadow-box rounded-2xl bg-black text-white py-2">I'm here to help you</button>
+            <div className="bg-gray-100 w-1/2 rounded-2xl p-3 flex flex-col gap-5">
+                <div className="flex justify-center items-center">
+                <button className="w-40 tracking-tight font-isans shadow-box rounded-2xl bg-black text-white py-2">I'm here to help you</button>
+                </div>
+                <div className="flex flex-col gap-3">
+                <FAQ solution={"The timeline depends on the project’s scope and complexity. Branding and UI/UX projects usually take 2–6 weeks, while Framer website development can range from 1–4 weeks. I’ll provide a detailed timeline after the project brief"}>What's your typical project timeline?</FAQ>
+                <FAQ solution={"Yes! I believe in collaboration and refining the work to match your vision. Each project includes a set number of revision rounds, which we’ll define in the project scope"}>How do you handle revisions?</FAQ>
+                <FAQ solution={"I strive to ensure that all clients are satisfied with the final result. If you’re not happy, I’ll work with you to make it right."}>What if I'm not satisfied with the final result?</FAQ>
+                <FAQ solution={"Absolutely! If you already have brand guidelines, I’ll ensure the designs align with your established identity while still bringing fresh creativity to the project"}>Can you work with my existing brand guidelines?</FAQ>
+                <FAQ solution={"Yes, I provide one month of post-project support to address any questions or minor adjustments you may need."}>Do you provide post-project support?</FAQ>
+                <FAQ solution={"The best way to reach me is via email or through the contact form on my website. I aim to respond within 24 hours."}>What’s the best way to reach you?</FAQ>
+                </div>
             </div>
-            <div className="flex flex-col gap-3">
-            <FAQ solution={"The timeline depends on the project’s scope and complexity. Branding and UI/UX projects usually take 2–6 weeks, while Framer website development can range from 1–4 weeks. I’ll provide a detailed timeline after the project brief"}>What's your typical project timeline?</FAQ>
-            <FAQ solution={"Yes! I believe in collaboration and refining the work to match your vision. Each project includes a set number of revision rounds, which we’ll define in the project scope"}>How do you handle revisions?</FAQ>
-            <FAQ solution={"I strive to ensure that all clients are satisfied with the final result. If you’re not happy, I’ll work with you to make it right."}>What if I'm not satisfied with the final result?</FAQ>
-            <FAQ solution={"Absolutely! If you already have brand guidelines, I’ll ensure the designs align with your established identity while still bringing fresh creativity to the project"}>Can you work with my existing brand guidelines?</FAQ>
-            <FAQ solution={"Yes, I provide one month of post-project support to address any questions or minor adjustments you may need."}>Do you provide post-project support?</FAQ>
-            <FAQ solution={"The best way to reach me is via email or through the contact form on my website. I aim to respond within 24 hours."}>What’s the best way to reach you?</FAQ>
-            </div>
-        </div>
         </div>
     </motion.div>
     </>
