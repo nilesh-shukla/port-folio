@@ -7,8 +7,8 @@ function Footer() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
         id="Projects"
         className="px-40 py-35 font-isans bg-[url('./assets/background.webp')]"
       >

@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/bookacall" element={<Booking />} />
         </Routes>
         <Footer />
       </SmoothScroll>

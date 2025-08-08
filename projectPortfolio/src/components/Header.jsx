@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './Button';
 import myface from '../assets/myFace.jpg';
@@ -82,10 +82,13 @@ function Header() {
             <motion.div 
               className='w-full md:w-[30%] md:mt-[60vh]'
             >
-              <p className='text-l  font-raleway tracking-tight text-gray-800 mb-8'>
-              As a machine learning enthusiast with a growing eye for visual design and frontend development, I combine data-driven thinking with clean, responsive interfaces using React. I collaborate to build intelligent, user-aware products that bridge functionality and experience
+              <p className='text-md font-raleway tracking-tight text-gray-800 mb-8'>
+                <FontAwesomeIcon icon={faQuoteLeft} className='text-5xl mr-2 mb-2'/>
+                As an ML enthusiast with a strong focus on clean UI, I collaborate closely with teams to build smart, user-aware interfaces. A reliable partner in turning data-driven ideas into intuitive experiences.
               </p>
-              <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
+              <a href="https://mail.google.com" target='_blank'>
+                <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
+              </a>
             </motion.div>
           </div>
         </motion.div>

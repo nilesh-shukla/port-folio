@@ -1,12 +1,12 @@
-1.>> Working on parallex of Home page
+1.>> 
 
-2.>> 
+2.>> When clicked on any button it should refresh from starting point
 
 3.>> About page - creating components in People section
 
 4.>> Contact page - TextFields border when clicked to be fixed
 
-5.>> Javascript for button funtioning 
+5.>> Javascript for button funtioning / Service section to be updated
 
 6.>> Responsiveness
 

@@ -20,7 +20,10 @@ function Navigation() {
           </ul>
         </nav>
 
-        <Button buttonName="Book A Call" className='booking tracking-tight bg-black rounded-2xl text-white font-isans px-5 py-3 shadow-box cursor-pointer hover:bg-violet-600 duration-300' /> 
+        <Link to="/bookacall">
+              <Button buttonName="Book a Call" className="booking tracking-tight bg-black rounded-2xl text-white font-isans px-5 py-3 shadow-box cursor-pointer hover:bg-violet-600 duration-300" />
+        </Link>
+
       </header>
 
 
