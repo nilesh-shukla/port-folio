@@ -28,8 +28,12 @@ import { faArrowRight, faAward, faQuoteRight, faCircleCheck, faRocket, faFaceSmi
 
 function Home() {
   return (
-    <>
+    <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration: 4.0}}>
     <Header />
+    
 
     {/*Projects Section*/}
     <motion.div
@@ -53,13 +57,13 @@ function Home() {
             
             <div className='flex flex-wrap flex-row gap-y-4 justify-between py-10'>
 
-                <Cards imgName={imgProject1} className="w-[49%] h-[50vh]" projectName="BugsSmith" textColor={"text-white"}/>
+                <Cards imgName={imgProject1} className="w-[49%] h-[50vh]" projectName="BugsSmith" textColor={"text-white"} describe={"A platform that uses intelligence to verify identities and detects suspicious activity to prevent fake profiles and ensure authentic online interactions"}/>
                 
-                <Cards imgName={imgProject4} className="w-[49%] h-[50vh]" projectName="CarbonWise" textColor={"text-white"}/> 
+                <Cards imgName={imgProject4} className="w-[49%] h-[50vh]" projectName="CarbonWise" textColor={"text-black"} describe={"An AI-powered platform providing personalized insights to help households monitor, reduce, and control their carbon footprint effectively"}/> 
                                     
-                <Cards imgName={imgProject2} className="w-[49%] h-[50vh] text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}/>
+                <Cards imgName={imgProject2} className="w-[49%] h-[50vh] text-black" projectName="Aasan Yatra" textColor={"text-white"} describe={"A platform that guides travelers with curated destinations, tips, and resources to plan memorable and hassle-free tourism experiences"}/>
                     
-                <Cards imgName={imgProject3} className="w-[49%] h-[50vh]" projectName="LeavePoint"/>
+                <Cards imgName={imgProject3} className="w-[49%] h-[50vh]" projectName="LeavePoint" describe={"A website enabling students to submit, track, and manage leave applications seamlessly with an easy-to-use interface"}/>
                     
             </div>
     </motion.div>
@@ -212,7 +216,7 @@ function Home() {
             </div>
         </div>
     </motion.div>
-    </>
+    </motion.div>
   )
 }
 

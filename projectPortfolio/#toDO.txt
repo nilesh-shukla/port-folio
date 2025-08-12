@@ -1,4 +1,4 @@
-1.>> 
+1.>> Fixing the header.jsx
 
 2.>> When clicked on any button it should refresh from starting point
 

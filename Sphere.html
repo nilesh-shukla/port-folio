@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Distorted AI Sphere</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+
+  <!-- Load Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Load SimplexNoise -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+</head>
+<body>
+
+<script>
+  let scene = new THREE.Scene();
+  let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 3.5;
+
+  let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
+  document.body.appendChild(renderer.domElement);
+
+  let simplex = new SimplexNoise();
+
+  // Create sphere geometry with more segments for smoother effect
+  let radius = 1;
+  let widthSegments = 80;
+  let heightSegments = 80;
+  let geometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
+
+  // Enhanced material with size variation and color
+  let material = new THREE.PointsMaterial({
+    color: 0x000000,  // Start with black
+    size: 0.015,
+    transparent: true,
+    opacity: 0.8,
+    sizeAttenuation: true
+  });
+
+  let sphere = new THREE.Points(geometry, material);
+  scene.add(sphere);
+
+  // Store original positions and create random offsets for particles
+  let originalPositions = geometry.attributes.position.array.slice();
+  let randomOffsets = new Float32Array(originalPositions.length);
+  let velocities = new Float32Array(originalPositions.length);
+  
+  // Initialize random offsets and velocities for chaotic movement
+  for (let i = 0; i < randomOffsets.length; i += 3) {
+    randomOffsets[i] = (Math.random() - 0.5) * 0.1;
+    randomOffsets[i + 1] = (Math.random() - 0.5) * 0.1;
+    randomOffsets[i + 2] = (Math.random() - 0.5) * 0.1;
+    
+    velocities[i] = (Math.random() - 0.5) * 0.002;
+    velocities[i + 1] = (Math.random() - 0.5) * 0.002;
+    velocities[i + 2] = (Math.random() - 0.5) * 0.002;
+  }
+
+  let hover = false;
+  let hoverTransition = 0; // Smooth transition value (0 = chaotic, 1 = perfect sphere)
+  let time = 0;
+
+  // Mouse events
+  document.addEventListener("mouseenter", () => { hover = true; });
+  document.addEventListener("mouseleave", () => { hover = false; });
+
+  // Add ambient lighting for better visual effect
+  let ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+  scene.add(ambientLight);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    time += 0.008;
+
+    // Smooth transition between states
+    if (hover) {
+      hoverTransition = Math.min(1, hoverTransition + 0.02);
+    } else {
+      hoverTransition = Math.max(0, hoverTransition - 0.015);
+    }
+
+    let positions = geometry.attributes.position.array;
+    
+    for (let i = 0; i < positions.length; i += 3) {
+      let ox = originalPositions[i];
+      let oy = originalPositions[i + 1];
+      let oz = originalPositions[i + 2];
+
+      // Update random velocities for chaotic movement
+      velocities[i] += (Math.random() - 0.5) * 0.0001;
+      velocities[i + 1] += (Math.random() - 0.5) * 0.0001;
+      velocities[i + 2] += (Math.random() - 0.5) * 0.0001;
+      
+      // Damping to prevent velocities from getting too large
+      velocities[i] *= 0.99;
+      velocities[i + 1] *= 0.99;
+      velocities[i + 2] *= 0.99;
+      
+      // Update random offsets
+      randomOffsets[i] += velocities[i];
+      randomOffsets[i + 1] += velocities[i + 1];
+      randomOffsets[i + 2] += velocities[i + 2];
+
+      // Chaotic state: random particle movement + noise distortion
+      let noise1 = simplex.noise4D(ox * 0.8, oy * 0.8, oz * 0.8, time * 0.3);
+      let noise2 = simplex.noise4D(ox * 1.2, oy * 1.2, oz * 1.2, time * 0.5);
+      let distortion = 0.2 * noise1 + 0.1 * noise2;
+      
+      let len = Math.sqrt(ox * ox + oy * oy + oz * oz);
+      let chaoticX = (ox / len) * (radius + distortion) + randomOffsets[i] * (1 - hoverTransition);
+      let chaoticY = (oy / len) * (radius + distortion) + randomOffsets[i + 1] * (1 - hoverTransition);
+      let chaoticZ = (oz / len) * (radius + distortion) + randomOffsets[i + 2] * (1 - hoverTransition);
+
+      // Perfect sphere state
+      let perfectX = ox;
+      let perfectY = oy;
+      let perfectZ = oz;
+
+      // Interpolate between chaotic and perfect states
+      positions[i] = chaoticX * (1 - hoverTransition) + perfectX * hoverTransition;
+      positions[i + 1] = chaoticY * (1 - hoverTransition) + perfectY * hoverTransition;
+      positions[i + 2] = chaoticZ * (1 - hoverTransition) + perfectZ * hoverTransition;
+    }
+
+    geometry.attributes.position.needsUpdate = true;
+    
+    // Dynamic rotation based on state
+    sphere.rotation.y += 0.002 * (1 - hoverTransition * 0.8);
+    sphere.rotation.x += 0.001 * (1 - hoverTransition * 0.9);
+    
+    // Smooth color transition: black (distorted) to grey (perfect sphere)
+    let greyValue = hoverTransition * 0.5; // 0 (black) to 0.5 (grey)
+    material.color.setRGB(greyValue, greyValue, greyValue);
+    
+    // Dynamic size and opacity based on transition
+    material.size = 0.015 + 0.01 * hoverTransition;
+    material.opacity = 0.6 + 0.3 * hoverTransition;
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Responsive design
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // Optional: Add click interaction for extra visual feedback
+  document.addEventListener('click', () => {
+    // Create a brief pulse effect
+    material.size *= 1.5;
+    setTimeout(() => {
+      material.size /= 1.5;
+    }, 150);
+  });
+</script>
+</body>
+</html>
