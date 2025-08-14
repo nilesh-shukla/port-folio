@@ -27,10 +27,7 @@
 
 .shadow-box {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.box:nth-child(even){
-    margin-left: auto;
+    overflow: visible;
 }
 
 .no-scrollbar::-webkit-scrollbar{

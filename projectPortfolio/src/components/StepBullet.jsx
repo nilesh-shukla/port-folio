@@ -1,6 +1,6 @@
 function StepBullet({ className, number, heading, paragraph }) {
   return (
-    <div className={`box font-isans flex flex-col bg-[#121212] p-5 w-[65%] rounded-2xl ${className}`}>
+    <div className={`xl:nth-[even]:ml-auto font-isans flex flex-col bg-[#121212] p-5 xl:w-[65%] w-full rounded-2xl ${className}`}>
       <div className={`w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#121212] to-[#2D2E30] via[#1f1f1f] text-xl text-gray-500 mb-5`}>
         {number}
       </div>

@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Services({ className, customClass, children, headingName, icon, iconColor, iconBgColor, contentBgColor, bgColor, headingColor, textColor, describe, tag, tagBgColor }) {
   return (
-    <div className={`${className} ${bgColor} group p-2 rounded-3xl flex flex-col gap-2 w-[32%]`}>
+    <div className={`${className} ${bgColor} group p-2 rounded-3xl flex flex-col gap-2 w-full`}>
         
         <div className={`${contentBgColor} flex justify-between items-center group-hover:cursor-pointer rounded-2xl p-2 group-hover:shadow-2xl z-20`}>
             <div className='relative w-[75%] h-10 overflow-hidden'>
@@ -23,7 +23,7 @@ function Services({ className, customClass, children, headingName, icon, iconCol
         </div>
 
         <div className={`${contentBgColor} flex flex-col group-hover:opacity-50 duration-300 group-hover:cursor-pointer rounded-2xl px-2 py-3 gap-3 z-10`}>
-            <p className={`${textColor} font-isans`}>{describe}</p>
+            <p className={`${textColor} font-isans tracking-tight leading-tight`}>{describe}</p>
             <div className='flex justify-between'>
                 {children}
             </div>

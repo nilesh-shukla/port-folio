@@ -1,38 +1,55 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react';
 
 import MySphere from './MySphere';
 import Button from './Button';
 
 function Header() {
 
+  const [isNarrowDevice, setIsNarrowDevice] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      // Specifically target very narrow devices like Galaxy Z Fold 5
+      const isNarrow = window.innerWidth < 380 && window.innerHeight > 700;
+      setIsNarrowDevice(isNarrow);
+    };
+
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+  
   return (
-    <div className='m-0 relative h-screen overflow-hidden' >
-      <div className='relative w-full h-full' >
+    <div className='m-0 relative md:h-screen h-[110vh] overflow-hidden' >
+      <div className='relative w-full h-full min-h-screen' >
 
         {/* BACKGROUND SPHERE */}
-        <div className='absolute group inset-0 w-full h-full z-0'>
+        <div className={`absolute xl:top-auto md:top-1/7 top-1/2 left-1/2 transform -translate-x-1/2 w-full h-full ${
+          isNarrowDevice ? 'max-w-[90vw] mx-auto left-0 right-0 transform-none' : ''
+        }`}>
           <MySphere />
         </div>
         
         {/* DESCRIPTION SECTION */}
-        <div className='absolute bottom-0 left-0 right-0 px-8 md:px-14 pb-8 z-20' >
-          <div className='flex flex-col md:flex-row md:gap-[33%] justify-between items-end gap-8'>
-            <div className='flex-1 md:w-[33%]'>
+        <div className='absolute xl:bottom-0 xl:top-auto md:top-[10vh] top-[18vh] left-0 right-0 px-4 xl:px-14 pb-8' >
+          <div className='flex flex-col xl:flex-row justify-between'>
+            <div className='flex-1 xl:basis-1/3 flex-shrink-0 '>
               <div className='w-fit font-isans text-gray-500 flex items-center gap-[2px] shadow rounded-3xl px-2 py-1 mb-4 bg-white/80 backdrop-blur-sm'>
                 <FontAwesomeIcon icon={faCircle} className="text-green-600 text-[10px] mr-2" />
                 <span className='text-sm'> 2 projects left in April </span>
               </div>
-              <p className='text-4xl md:text-5xl font-isans tracking-tight text-gray-900 leading-tight'>
-                I turn data into design <br /> 
-                and logic into innovation
+              <p className='text-3xl xl:text-5xl font-isans tracking-tight text-gray-900 xl:leading-12 leading-9'>
+                 Solving problems using <br className='hidden xl:block' /> intelligent algorithms, providing <br className='hidden xl:block' /> engaging web experiences
               </p>
             </div>
 
-            <div className='flex flex-col gap-4 items-end md:w-[30%]'>
-              <p className=' text-gray-800 '>As an ML enthusiast with a strong focus on React and clean UI, I collaborate closely with teams to build smart, user-aware interfaces. A reliable partner in turning data-driven ideas into intuitive experiences</p>
+            <div className='flex flex-col gap-6 xl:pl-2 pb-8 xl:basis-1/3 flex-shrink-0 xl:-mt-6'>
+
+              <p className='text-gray-800 tracking-tight leading-5'>As an ML enthusiast with a strong focus on React and clean UI, I collaborate closely with teams to build smart, user-aware interfaces. A reliable partner in turning data-driven ideas into intuitive experiences</p>
                 <a href="https://mail.google.com" target='_blank'>
-                <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
+                <Button buttonName="Email Me" className="hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
               </a>
             </div>
           </div>

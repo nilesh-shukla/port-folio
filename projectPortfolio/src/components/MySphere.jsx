@@ -6,17 +6,18 @@ import { createNoise4D } from "simplex-noise";
 function MySphere({ classname }) {
   return (
     <div className={`w-full h-full ${classname}`}>
-      <Canvas 
-        camera={{ position: [0, 0, 3.5], fov: 60 }}
-        style={{ width: '100%', height: '100%' }}
-        resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
-        // Add performance optimizations
-        dpr={[1, 2]} // Limit device pixel ratio
-        performance={{ min: 0.5 }} // Throttle when performance drops
-      >
-        <ambientLight intensity={0.3} />
-        <DistortedSphere />
-      </Canvas>
+      <div className="w-100 h-100 sm:w-80 sm:h-80 md:w-full md:h-full mx-auto">
+        <Canvas 
+          camera={{ position: [0, 0, 3.5], fov: 60 }}
+          style={{ width: '100%', height: '100%' }}
+          resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
+          dpr={[1, 2]}
+          performance={{ min: 0.5 }}
+        >
+          <ambientLight intensity={0.3} />
+          <DistortedSphere />
+        </Canvas>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 
 function Cards({textColor,className, projectName, imgName, describe}) {
   return (
-    <div className={`relative flex rounded-3xl overflow-hidden group hover:cursor-pointer ${className}`}>
+    <div className={`relative aspect-[4/3] flex rounded-3xl overflow-hidden group hover:cursor-pointer ${className}`}>
     
       <img src={imgName} alt="Project" className='scale-100 group-hover:scale-105 group-hover:blur-xs transition-all duration-300 ease-in-out object-cover w-full z-0' />
 

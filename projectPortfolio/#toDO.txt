@@ -1,5 +1,7 @@
 1.>> Fixing the header.jsx
 
+### Relevant Details
+
 2.>> When clicked on any button it should refresh from starting point
 
 3.>> About page - creating components in People section
