@@ -1,17 +1,37 @@
-# Normalize text files: store LF in repo, use platform-appropriate EOL in working tree
-* text=auto
+# Ensure consistent line endings
 
-# Force specific EOLs if needed
-*.sh   text eol=lf
-*.bash text eol=lf
-*.ps1  text eol=crlf
-*.bat  text eol=crlf
+# Auto-detect text files and normalize to LF in the repo
+* text=auto eol=lf
 
-# Never touch binary files
-*.png  binary
-*.jpg  binary
-*.jpeg binary
-*.gif  binary
-*.pdf  binary
-*.zip  binary
-*.exe  binary
+# Windows-specific scripts keep CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Unix/mac scripts always LF
+*.sh    text eol=lf
+
+# Common code files (force LF everywhere)
+*.js    text eol=lf
+*.ts    text eol=lf
+*.jsx   text eol=lf
+*.tsx   text eol=lf
+*.py    text eol=lf
+*.java  text eol=lf
+*.c     text eol=lf
+*.cpp   text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.md    text eol=lf
+
+# Binary files (never touch line endings)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.zip   binary
+*.exe   binary
