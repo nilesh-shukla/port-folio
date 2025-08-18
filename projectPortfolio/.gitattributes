@@ -1,0 +1,17 @@
+# Normalize text files: store LF in repo, use platform-appropriate EOL in working tree
+* text=auto
+
+# Force specific EOLs if needed
+*.sh   text eol=lf
+*.bash text eol=lf
+*.ps1  text eol=crlf
+*.bat  text eol=crlf
+
+# Never touch binary files
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.pdf  binary
+*.zip  binary
+*.exe  binary
