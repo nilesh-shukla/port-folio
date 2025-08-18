@@ -1,46 +1,71 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import MySphere from './MySphere';
 import Button from './Button';
 
 function Header() {
 
-  const [isNarrowDevice, setIsNarrowDevice] = useState(false);
+  const containerRef = useRef(null);
+  const sphereRef = useRef(null);
+  const descriptionRef = useRef(null);
 
-  useEffect(() => {
-    const checkDevice = () => {
-      // Specifically target very narrow devices like Galaxy Z Fold 5
-      const isNarrow = window.innerWidth < 380 && window.innerHeight > 700;
-      setIsNarrowDevice(isNarrow);
+  useEffect(() =>{
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if(containerRef.current){
+        containerRef.current.style.transform = `translateY(-${currentScrollY*0.2}px)`;
+      }
+      if(sphereRef.current){
+        sphereRef.current.style.transform = `translateY(${currentScrollY*0.1}px)`;
+      }
     };
 
-    checkDevice();
-    window.addEventListener('resize', checkDevice);
-    return () => window.removeEventListener('resize', checkDevice);
+    let ticking = false;
+    const throttledScroll = () => {
+      if(!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', throttledScroll, {passive : true});
+    return () => window.removeEventListener('scroll', throttledScroll);
   }, []);
-  
+
   return (
-    <div className='m-0 relative md:h-screen h-[110vh] overflow-hidden' >
-      <div className='relative w-full h-full min-h-screen' >
+    <div className='m-0 relative h-screen overflow-hidden' >
+      <div
+        ref={containerRef}
+        className='relative w-full h-full min-h-screen'
+        style={{
+          willChange : 'transform'
+        }} 
+      >
 
         {/* BACKGROUND SPHERE */}
-        <div className={`absolute xl:top-auto md:top-1/7 top-1/2 left-1/2 transform -translate-x-1/2 w-full h-full ${
-          isNarrowDevice ? 'max-w-[90vw] mx-auto left-0 right-0 transform-none' : ''
-        }`}>
+        <div
+          ref={sphereRef} 
+          className='absolute xl:top-auto md:top-1/7 top-1/2 left-1/2 transform -translate-x-1/2 w-full h-full'
+          style={{
+            willChange : 'transform'
+          }}
+        >
           <MySphere />
         </div>
         
         {/* DESCRIPTION SECTION */}
-        <div className='absolute xl:bottom-0 xl:top-auto md:top-[10vh] top-[18vh] left-0 right-0 px-4 xl:px-14 pb-8' >
+        <div className='absolute xl:bottom-0 xl:top-auto md:top-[10vh] top-[15vh] left-0 right-0 px-4 xl:px-14 pb-8' >
           <div className='flex flex-col xl:flex-row justify-between'>
             <div className='flex-1 xl:basis-1/3 flex-shrink-0 '>
-              <div className='w-fit font-isans text-gray-500 flex items-center gap-[2px] shadow rounded-3xl px-2 py-1 mb-4 bg-white/80 backdrop-blur-sm'>
+              <div className='w-fit font-inter text-gray-500 flex items-center gap-[2px] shadow rounded-3xl px-2 py-1 mb-4 bg-white/80 backdrop-blur-sm'>
                 <FontAwesomeIcon icon={faCircle} className="text-green-600 text-[10px] mr-2" />
                 <span className='text-sm'> 2 projects left in April </span>
               </div>
-              <p className='text-3xl xl:text-5xl font-isans tracking-tight text-gray-900 xl:leading-12 leading-9'>
+              <p className='text-3xl xl:text-5xl font-inter tracking-tight text-gray-900 xl:leading-12 leading-9'>
                  Solving problems using <br className='hidden xl:block' /> intelligent algorithms, providing <br className='hidden xl:block' /> engaging web experiences
               </p>
             </div>
@@ -49,7 +74,7 @@ function Header() {
 
               <p className='text-gray-800 tracking-tight leading-5'>As an ML enthusiast with a strong focus on React and clean UI, I collaborate closely with teams to build smart, user-aware interfaces. A reliable partner in turning data-driven ideas into intuitive experiences</p>
                 <a href="https://mail.google.com" target='_blank'>
-                <Button buttonName="Email Me" className="hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3" />
+                <Button buttonName="Email Me" className="hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-inter shadow-box rounded-2xl bg-black text-white px-5 py-3" />
               </a>
             </div>
           </div>

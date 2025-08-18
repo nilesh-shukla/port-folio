@@ -48,7 +48,7 @@ function Home() {
                     <h1 className='text-3xl xl:text-4xl text-dmsans font-boldness tracking-tighter text-black'>Crafted Concepts</h1>
                     <Link to="/work">
                         <Button 
-                            className="works tracking-tight bg-gray-200 text-gray-600 font-isans cursor-pointer rounded-2xl hover:bg-purple-600 hover:text-white duration-300 flex items-center justify-center gap-2 p-4 xl:px-4 xl:py-3"
+                            className="works tracking-tight bg-gray-200 text-gray-600 font-inter cursor-pointer rounded-2xl hover:bg-purple-600 hover:text-white duration-300 flex items-center justify-center gap-2 p-4 xl:px-4 xl:py-3"
                         ><span className="hidden xl:inline">All Works</span>
                             <FontAwesomeIcon 
                             icon={faArrowRight} 
@@ -85,7 +85,7 @@ function Home() {
                 <FontAwesomeIcon icon={faAward} className="text-3xl mt-1 text-yellow-400" />
             </div> 
             <div className="flex flex-col">
-                <h1 className="text-2xl tracking-tight font-isans mt-5">Awwwards Nominee</h1>
+                <h1 className="text-2xl tracking-tight font-inter mt-5">Awwwards Nominee</h1>
                 <p className="text-gray-600 tracking-tight leading-tight">Recognized as Excellence in Web Design and innovative Machine Learning Models</p>
             </div>
             <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
@@ -99,7 +99,7 @@ function Home() {
             </Achievement>
             <Achievement className={"shadow-box z-10"} bgColor={"bg-black"}>
             <FontAwesomeIcon icon={faQuoteRight} className="text-4xl text-gray-600" />
-            <p className="text-white text-2xl mt-2 font-isans tracking-tight">Nilesh’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
+            <p className="text-white text-2xl mt-2 font-inter tracking-tight">Nilesh’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
             <div className="flex gap-3 xl:mt-30 mt-60">
                 <img src={clientImage} alt="client"  className="w-8 h-8 mt-2 rounded-lg"/>
                 <div className="flex flex-col">
@@ -140,12 +140,12 @@ function Home() {
             className=" xl:px-45 px-4 py-45 "
         >
             <div className="flex xl:flex-row flex-col justify-between xl:gap-[35%] gap-7 xl:mb-15 mb-20">
-                <h1 className="text-xl font-isans text-gray-500">Services</h1>
-                <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-isans" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
+                <h1 className="text-xl font-inter text-gray-500">Services</h1>
+                <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-inter" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
             </div>
 
             <div className='flex xl:flex-row flex-col justify-between items-center xl:gap-2 gap-4'>
-                    <Services headingName={"Machine Learning"} icon={faHexagonNodes} iconColor={"text-yellow-300"} iconBgColor={"bg-yellow-100"} bgColor={"bg-gray-100"} contentBgColor={"bg-white"} describe={"Building intelligent and adaptive models that learn from data to deliver accurate predictions, automate decisions, and unlock insights that drive smarter, data-driven solutions"} textColor={"text-gray-400"} tag={["Python", "Machine Learning", "Data Science", "Artificial Intelligence"]} tagBgColor={"bg-gray-100"} >
+                    <Services headingName={"Machine Learning"} icon={faHexagonNodes} iconColor={"text-yellow-300"} iconBgColor={"bg-yellow-100"} bgColor={"bg-gray-100"} contentBgColor={"bg-white"} describe={"Building intelligent and adaptive models that learn from data to deliver accurate predictions, automate decisions, and unlock insights that drive smarter, data-driven solutions"} textColor={"text-gray-400"} tag={["Python", "Machine Learning", "Data Science", "Automation"]} tagBgColor={"bg-gray-100"} >
                         <img src={ml1} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
                         <img src={ml2} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
                         <img src={ml3} alt="Image" className=" rounded-2xl object-cover w-[33%]"/>
@@ -173,9 +173,9 @@ function Home() {
             className="xl:px-45 px-4 py-20 bg-[url('./assets/background.webp')] bg-cover bg-no-repeat"
         >
             <div className="flex xl:flex-row flex-col justify-between xl:gap-[30%] gap-10">
-                <h1 className=" xl:text-xl text-lg font-isans text-gray-500 whitespace-nowrap">How it works</h1>
+                <h1 className=" xl:text-xl text-lg font-inter text-gray-500 whitespace-nowrap">How it works</h1>
                 <div className="flex flex-col">
-                    <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-isans text-white mb-20" style={{fontWeight: 500}}>A simple and efficient workflow to bring your vision to life.<span className="text-gray-500"> From the first call to final delivery, every step is designed for clarity and efficiency.</span></p>
+                    <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-inter text-white mb-20" style={{fontWeight: 500}}>A simple and efficient workflow to bring your vision to life.<span className="text-gray-500"> From the first call to final delivery, every step is designed for clarity and efficiency.</span></p>
                     <div className="flex flex-col gap-4">
                         <StepBullet number={1} heading={"Book A Call"} paragraph={"Let’s start with a conversation! We’ll discuss your goals, ideas, and how I can help bring them to life. This is where we align expectations and ensure a great fit"}/>
                         <StepBullet number={2} heading={"Project Brief"} paragraph={"Once we’re on the same page, we’ll define the project scope, timeline, and deliverables. A structured brief ensures a smooth and efficient process"} />
@@ -197,18 +197,18 @@ function Home() {
             className="xl:px-45 px-4 py-40"
         >
             <div className="flex xl:flex-row flex-col gap-10">
-                <div className="font-isans flex flex-col xl:w-1/2 xl:gap-2 gap-4">
+                <div className="font-inter flex flex-col xl:w-1/2 xl:gap-2 gap-4">
                     <div className="flex items-center overflow-hidden">
                     <h1 className="xl:text-xl text-lg text-gray-500 mb-2 mr-2">FAQs</h1><hr className="w-full text-[#e4e4e4]" />
                     </div>
                     <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 mb-6"><span className="text-gray-500">Answers to common questions to help you understand</span> the process and how we can work together</p>
                     <a href="https://mail.google.com" target='_blank'>
-                    <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-black text-white px-5 py-3 w-30" />
+                    <Button buttonName="Email Me" className="emailMe hover:bg-violet-600 duration-300 cursor-pointer tracking-tight font-inter shadow-box rounded-2xl bg-black text-white px-5 py-3 w-30" />
                     </a>
                 </div>
                 <div className="bg-gray-100 xl:w-1/2 rounded-2xl p-3 flex flex-col gap-5">
                     <div className="flex justify-center items-center">
-                    <button className="w-40 tracking-tight font-isans shadow-box rounded-2xl bg-violet-600 text-white py-2">I'm here to help you</button>
+                    <button className="w-40 tracking-tight font-inter shadow-box rounded-2xl bg-violet-600 text-white py-2">I'm here to help you</button>
                     </div>
                     <div className="flex flex-col gap-3 tracking-tight">
                     <FAQ solution={"The timeline depends on the project’s scope and complexity. ML projects typically take 3–6 weeks, depending on the data, model complexity, and deployment needs. Websites can take from 2–4 weeks based on the number of pages and interactions. I’ll provide a detailed timeline after reviewing the project brief."}>What's your typical project timeline?</FAQ>
@@ -221,7 +221,7 @@ function Home() {
                 </div>
             </div>
         </motion.div>
-        
+
     </motion.div>
   )
 }

@@ -13,21 +13,21 @@ function Work() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5, ease: 'easeInOut' }}
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.1 }}
       id="Projects"
-      className="p-45"
+      className="xl:p-45 p-5 xl:mt-auto mt-[8vh]"
     >
-          <h1 className="text-[2.6em] tracking-tighter font-isans leading-12 mb-8" style={{fontWeight: 500}}><span className="text-gray-500">Building intelligent interfaces</span> that blend <br /> data-driven insights with sleek user experiences.</h1>
+          <h1 className="xl:text-[2.6em] text-3xl tracking-tighter font-isans xl:leading-12 leading-tight xl:mb-8 mb-4" style={{fontWeight: 500}}><span className="text-gray-500">Building intelligent interfaces</span> that blend <br className="xl:block hidden" /> data-driven insights with sleek user experiences.</h1>
 
-          <div className='flex flex-wrap flex-row gap-y-4 justify-between py-10'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 py-10'>
 
-            <Cards imgName={imgProject1} className="w-[49%] h-[50vh]" projectName="BugsSmith" textColor={"text-white"}/>
+            <Cards imgName={imgProject1} projectName="BugsSmith" textColor={"text-white"}/>
                 
-            <Cards imgName={imgProject4} className="w-[49%] h-[50vh]" projectName="CarbonWise" textColor={"text-white"}/>            
+            <Cards imgName={imgProject4} projectName="CarbonWise" textColor={"text-white"}/>            
                                   
-            <Cards imgName={imgProject2} className="w-[49%] h-[50vh] text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}/>
+            <Cards imgName={imgProject2} className="text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}/>
                 
-            <Cards imgName={imgProject3} className="w-[49%] h-[50vh]" projectName="LeavePoint"/>
+            <Cards imgName={imgProject3} projectName="LeavePoint"/>
 
           </div>
 

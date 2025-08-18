@@ -6,7 +6,7 @@ import { createNoise4D } from "simplex-noise";
 function MySphere({ classname }) {
   return (
     <div className={`w-full h-full ${classname}`}>
-      <div className="w-100 h-100 sm:w-80 sm:h-80 md:w-full md:h-full mx-auto">
+      <div className="w-100 h-100 md:w-full md:h-full mx-auto">
         <Canvas 
           camera={{ position: [0, 0, 3.5], fov: 60 }}
           style={{ width: '100%', height: '100%' }}
