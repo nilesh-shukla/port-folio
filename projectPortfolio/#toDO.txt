@@ -1,18 +1,10 @@
-1.>> Fixing the header.jsx
+1.>> 
 
 ### Relevant Details
 
 2.>> When clicked on any button it should refresh from starting point
 
-3.>> About page - creating components in People section
-
-4.>> Contact page - TextFields border when clicked to be fixed
-
-5.>> Javascript for button funtioning / Service section to be updated
-
-6.>> Responsiveness
-
-7.>> Work image instaed of posters / FACE IMAGE
+7.>> FACE IMAGE
 
 8.>> Providing links to each works
 

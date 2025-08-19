@@ -31,7 +31,7 @@ function Home() {
     <motion.div 
         initial={{opacity:0}}
         animate={{opacity:1}}
-        transition={{duration: 4.0}}>
+        transition={{duration: 2}}>
     
         <Header />
 
@@ -77,7 +77,7 @@ function Home() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             viewport={{ amount: 0.1 }}
             id="Projects"
-            className="grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-2 md:grid-rows-1 grid-rows-3 grid-cols-1  items-stretch xl:px-45 px-4 justify-center xl:gap-2.5 gap-2"
+            className="grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-2 md:grid-rows-1 grid-rows-3 grid-cols-1 items-stretch xl:px-45 px-4 justify-center xl:gap-2.5 gap-2"
         >
             <Achievement className={"xl:block md:hidden block overflow-hidden group"} bgColor={"bg-gray-100"}>          
             <div className="flex">
@@ -97,6 +97,7 @@ function Home() {
                 </button>
             </div>
             </Achievement>
+
             <Achievement className={"shadow-box z-10"} bgColor={"bg-black"}>
             <FontAwesomeIcon icon={faQuoteRight} className="text-4xl text-gray-600" />
             <p className="text-white text-2xl mt-2 font-inter tracking-tight">Nilesh’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
@@ -139,9 +140,9 @@ function Home() {
             id="Projects"
             className=" xl:px-45 px-4 py-45 "
         >
-            <div className="flex xl:flex-row flex-col justify-between xl:gap-[35%] gap-7 xl:mb-15 mb-20">
+            <div className="xl:grid xl:grid-rows-1 xl:grid-cols-3 flex flex-col justify-between gap-7 xl:mb-15 mb-20">
                 <h1 className="text-xl font-inter text-gray-500">Services</h1>
-                <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-inter" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
+                <p className="xl:col-span-2 xl:pl-14 xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-inter" style={{fontWeight: 500}}> <span className="text-gray-500">Design solutions that elevate brands and create seamless user experiences.</span> I help bring ideas to life with strategy and creativity</p>
             </div>
 
             <div className='flex xl:flex-row flex-col justify-between items-center xl:gap-2 gap-4'>
@@ -172,9 +173,9 @@ function Home() {
             id="Projects"
             className="xl:px-45 px-4 py-20 bg-[url('./assets/background.webp')] bg-cover bg-no-repeat"
         >
-            <div className="flex xl:flex-row flex-col justify-between xl:gap-[30%] gap-10">
+            <div className="xl:grid xl:grid-rows-1 xl:grid-cols-3 flex flex-col justify-between gap-10">
                 <h1 className=" xl:text-xl text-lg font-inter text-gray-500 whitespace-nowrap">How it works</h1>
-                <div className="flex flex-col">
+                <div className="xl:col-span-2 xl:pl-14 flex flex-col">
                     <p className="xl:text-4xl text-3xl tracking-tighter xl:leading-tight leading-8 font-inter text-white mb-20" style={{fontWeight: 500}}>A simple and efficient workflow to bring your vision to life.<span className="text-gray-500"> From the first call to final delivery, every step is designed for clarity and efficiency.</span></p>
                     <div className="flex flex-col gap-4">
                         <StepBullet number={1} heading={"Book A Call"} paragraph={"Let’s start with a conversation! We’ll discuss your goals, ideas, and how I can help bring them to life. This is where we align expectations and ensure a great fit"}/>

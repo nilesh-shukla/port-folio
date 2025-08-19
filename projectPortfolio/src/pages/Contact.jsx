@@ -1,10 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
 
 import contactImg from '../assets/contactImg.webp'
 
 function Contact() {
+
+  const [inputData, setInputData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+
+    if(errors[name]){
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleSubmit = () => {
+    const newErrors = {};
+    if(!inputData.name.trim()){
+      newErrors.name = 'Required Name';
+    }
+    if(!inputData.email.trim()){
+      newErrors.email = 'Required Email';
+    }
+    if(!inputData.message.trim()){
+      newErrors.message = 'Required Field';
+    }
+
+    setErrors(newErrors);
+
+    if(Object.keys(newErrors).length === 0){
+      console.log('Form Submitted');
+      alert('Form Submitted Succesfully');
+
+      setInputData({
+        name: '',
+        email: '',
+        message: ''
+      })
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,14 +67,70 @@ function Contact() {
 
       <div className='flex lg:flex-row flex-col gap-3 text-white'>
         <div className='bg-black p-5 flex flex-col rounded-2xl tracking-tighter xl:w-[75%] w-full shadow-box z-10'>
-          <label htmlFor="name" className='text-white mb-2'>Name</label>
-          <input type="text" placeholder='Nilesh Shukla' className='bg-[#2a2a2a] p-3 mb-4 rounded-xl placeholder-[#959595] ' />
-          <label htmlFor="email" className='text-white mb-2'>Email</label>
-          <input type="email" placeholder='nilesh1234@example.com' className='bg-[#2a2a2a] p-3 mb-4 rounded-xl placeholder-[#959595]' />
-          <label htmlFor="message" className='text-white mb-2'>Your Message</label>
-          <textarea name="message" placeholder='Enter your message' className='resize-none bg-[#2a2a2a] p-3 h-32 mb-4 rounded-xl placeholder-[#959595] no-scrollbar'/>
 
-          <Button className={"bg-white text-md tracking-tight py-3 hover:bg-gray-300 hover:cursor-pointer duration-300 rounded-2xl text-black"}>Submit</Button>
+          <div className='mb-3'> 
+            <label htmlFor="name" className='text-white'>Name</label>
+            <input 
+              type="text" 
+              id='name' 
+              name='name' 
+              value={inputData.name} 
+              onChange={handleInputChange} 
+              placeholder='Nilesh Shukla' 
+              className={`w-full bg-[#2a2a2a] p-3 border-2 mt-2 mb-1 rounded-xl placeholder-[#959595] focus:outline-none focus:ring-0 ${errors.name ? 'border-red-500' : 'border-transparent focus:border-white'}`}
+            />
+              {errors.name && (
+                <p className='text-red-500 text-sm mt-1 flex tems-center'>
+                  {/* Drawing the icon */}
+                  <svg className='w-4 h-4 mr-1' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                  </svg>
+                  {errors.name}
+                </p>
+              )}
+          </div>
+          
+          <div className='mb-3'>
+            <label htmlFor="email" className='text-white'>Email</label>
+            <input 
+              type="email" 
+              id='email' 
+              name='email' 
+              value={inputData.email} 
+              onChange={handleInputChange} placeholder='nilesh1234@gmail.com' 
+              className={`w-full mt-2 mb-1 border-2 bg-[#2a2a2a] p-3 rounded-xl placeholder-[#959595] focus:outline-none focus:ring-0 ${errors.email ? 'border-red-500' : 'border-transparent focus:border-white'}`}
+              />
+              {errors.email && (
+                <p className='text-red-500 text-sm flex items-center'>
+                  <svg className='w-4 h-4 mr-1' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                  </svg>
+                {errors.email}
+              </p>
+            )}
+          </div>
+
+          <div className='flex flex-col'>
+            <label htmlFor="message" className='text-white'>Your  Message</label>
+            <textarea 
+              id='message'
+              name="message" 
+              value={inputData.message}
+              onChange={handleInputChange}
+              placeholder='Enter your message' 
+              className={`resize-none bg-[#2a2a2a] p-3 h-32 border-2 mb-1 mt-2 rounded-xl placeholder-[#959595] focus:outline-none focus:ring-0 no-scrollbar ${errors.message ? 'border-red-500' : 'border-transparent focus:border-white'}`}
+              />
+              {errors.message && (
+                <p className='text-red-500 text-sm flex items-center'>
+                  <svg className='w-4 h-4 mr-1' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                  </svg>
+                {errors.message}
+              </p>
+              )}
+          </div>
+
+          <button onClick={handleSubmit} className={"bg-white text-md mt-4 tracking-tight py-3 hover:bg-gray-300 hover:cursor-pointer duration-300 rounded-2xl text-black"} >Submit</button>
         </div>
 
         <div className='rounded-2xl flex flex-col gap-2 justify-between bg-[#F7F7F7] xl:w-[35%] w-full p-5'>
