@@ -1,8 +1,6 @@
-1.>> 
+1.>> ABOUT PAGE
 
 ### Relevant Details
-
-2.>> When clicked on any button it should refresh from starting point
 
 7.>> FACE IMAGE
 

@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import Button from '../components/Button'
+import ContactPopUp from '../components/ContactPopUp'
 
 import contactImg from '../assets/contactImg.webp'
 
@@ -13,6 +15,7 @@ function Contact() {
   });
 
   const [errors, setErrors] = useState({});
+  const [showPopUp, setShowPopUp] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,23 +32,27 @@ function Contact() {
     }
   };
 
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const handleSubmit = () => {
     const newErrors = {};
     if(!inputData.name.trim()){
       newErrors.name = 'Required Name';
     }
-    if(!inputData.email.trim()){
-      newErrors.email = 'Required Email';
+    if(!isValidEmail(inputData.email.trim())){
+      newErrors.email = 'Invalid Email'
     }
-    if(!inputData.message.trim()){
-      newErrors.message = 'Required Field';
+    if(inputData.message.trim().length < 5){
+      newErrors.message = 'Enter atleast 5 characters';
     }
 
     setErrors(newErrors);
 
     if(Object.keys(newErrors).length === 0){
-      console.log('Form Submitted');
-      alert('Form Submitted Succesfully');
+      
+      setShowPopUp(true);
 
       setInputData({
         name: '',
@@ -54,6 +61,10 @@ function Contact() {
       })
     }
   };
+
+  const closeSuccessPopUp = () => {
+    setShowPopUp(false);
+  }
 
   return (
     <motion.div
@@ -80,7 +91,7 @@ function Contact() {
               className={`w-full bg-[#2a2a2a] p-3 border-2 mt-2 mb-1 rounded-xl placeholder-[#959595] focus:outline-none focus:ring-0 ${errors.name ? 'border-red-500' : 'border-transparent focus:border-white'}`}
             />
               {errors.name && (
-                <p className='text-red-500 text-sm mt-1 flex tems-center'>
+                <p className='text-red-500 text-sm mt-1 flex items-center'>
                   {/* Drawing the icon */}
                   <svg className='w-4 h-4 mr-1' fill='currentColor' viewBox='0 0 20 20'>
                     <path fillRule='evenodd' d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
@@ -89,7 +100,6 @@ function Contact() {
                 </p>
               )}
           </div>
-          
           <div className='mb-3'>
             <label htmlFor="email" className='text-white'>Email</label>
             <input 
@@ -109,7 +119,6 @@ function Contact() {
               </p>
             )}
           </div>
-
           <div className='flex flex-col'>
             <label htmlFor="message" className='text-white'>Your  Message</label>
             <textarea 
@@ -129,9 +138,9 @@ function Contact() {
               </p>
               )}
           </div>
-
           <button onClick={handleSubmit} className={"bg-white text-md mt-4 tracking-tight py-3 hover:bg-gray-300 hover:cursor-pointer duration-300 rounded-2xl text-black"} >Submit</button>
         </div>
+        <ContactPopUp isOpen={showPopUp} onClose={closeSuccessPopUp} />
 
         <div className='rounded-2xl flex flex-col gap-2 justify-between bg-[#F7F7F7] xl:w-[35%] w-full p-5'>
           <div>
@@ -141,7 +150,9 @@ function Contact() {
               <h1 className='text-gray-400 text-center'>approximately 15 minutes</h1>
             </div>
           </div>
-          <Button className={"bg-[#F7F7F7] w-full text-md tracking-tight py-3 rounded-2xl text-black border-gray-300 border-1 hover:bg-gray-200 hover:cursor-pointer duration-300"}>Book a Call</Button>
+          <Link to="/bookacall" onClick={() => setIsOpen(false)}>
+            <Button className={"bg-[#F7F7F7] w-full text-md tracking-tight py-3 rounded-2xl text-black border-gray-300 border-1 hover:bg-gray-200 hover:cursor-pointer duration-300"}>Book a Call</Button>
+          </Link>
         </div>
 
       </div>

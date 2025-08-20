@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
 import Button from './Button';
 
 function Footer() {
@@ -7,8 +8,8 @@ function Footer() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
         id="Projects"
         className="xl:px-40 xl:py-35 p-4 font-isans bg-[url('./assets/background.webp')]"
       >
@@ -17,7 +18,9 @@ function Footer() {
           <div className="relative flex flex-col xl:w-full">
             <p className="xl:text-[4em] text-3xl tracking-tight leading-tight text-white xl:mb-5 mb-8"><span className="
             text-gray-500">Book a call,</span> and I’ll take care of the rest</p>
-            <Button buttonName="Book a Call" className="hover:bg-[#d0d1d3] duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-white text-black px-5 py-3 w-30" />
+            <Link to="/bookacall" onClick={() => setIsOpen(false)}>
+              <Button buttonName="Book a Call" className="hover:bg-[#d0d1d3] duration-300 cursor-pointer tracking-tight font-isans shadow-box rounded-2xl bg-white text-black px-5 py-3 w-30" />
+            </Link>
             <div className="grid xl:grid-cols-3 grid-cols-2 gap-6 mt-[10vh] text-white">
               <div className="flex flex-col gap-2">
                 <a href="#" className="hover:text-[#6C7179] duration-300">Home</a>
