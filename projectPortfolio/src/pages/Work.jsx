@@ -5,6 +5,7 @@ import imgProject1 from "../assets/AI.jpg";
 import imgProject2 from "../assets/india_tour.jpg";
 import imgProject3 from "../assets/leave_form.jpg";
 import imgProject4 from "../assets/CarbonWisePoster.jpg"
+import imgProject5 from "../assets/cardioVision-image.png"
 
 
 function Work() {
@@ -19,15 +20,19 @@ function Work() {
     >
           <h1 className="xl:text-[2.6em] text-3xl tracking-tighter font-isans xl:leading-12 leading-tight xl:mb-8 mb-4" style={{fontWeight: 500}}><span className="text-gray-500">Building intelligent interfaces</span> that blend <br className="xl:block hidden" /> data-driven insights with sleek user experiences.</h1>
 
-          <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 py-10'>
+          <div className='grid auto-rows-auto grid-cols-1 xl:grid-cols-2 gap-2 py-10'>
 
             <Cards imgName={imgProject1} projectName="BugsSmith" textColor={"text-white"}/>
                 
             <Cards imgName={imgProject4} projectName="CarbonWise" textColor={"text-white"}/>            
                                   
-            <Cards imgName={imgProject2} className="text-black" projectName="Aasan Yatra" textColor={"text-brown-500"}/>
+            <Cards imgName={imgProject2} projectName="Aasan Yatra" textColor={"text-white"}/>
                 
             <Cards imgName={imgProject3} projectName="LeavePoint"/>
+
+            <div className="xl:col-span-2">
+              <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
+            </div>
 
           </div>
 

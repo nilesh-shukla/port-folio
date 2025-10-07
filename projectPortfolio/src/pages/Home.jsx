@@ -66,7 +66,7 @@ function Home() {
                     <Cards imgName={imgProject2} className=" text-black" projectName="Aasan Yatra" textColor={"text-white"} describe={"A platform that guides travelers with curated destinations, tips, and resources to plan memorable and hassle-free tourism experiences"}/>
                         
                     <Cards imgName={imgProject3}  projectName="LeavePoint" describe={"A website enabling students to submit, track, and manage leave applications seamlessly with an easy-to-use interface"}/>
-                        
+
                 </div>
         </motion.div>
 

@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import FAQ from "../components/FAQ";
 import AboutPeople from "../components/AboutPeople";
 
-import aboutImg from "../assets/aboutImg.avif"
+import aboutImg from "../assets/AboutImg.jpg"
 import interImg from "../assets/interImg.avif"
 import Collab from "../assets/gcollab.webp"
 import JS from "../assets/JS.webp"

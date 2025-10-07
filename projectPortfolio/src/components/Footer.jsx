@@ -14,7 +14,7 @@ function Footer() {
         className="xl:px-40 xl:py-35 p-4 font-isans bg-[url('./assets/background.webp')]"
       >
         <div className="flex xl:flex-row flex-col gap-12">
-          <img src="../src/assets/myImage.avif" alt="myImage" className="xl:w-[40%] rounded-3xl xl:mb-0 mb-10" />
+          <img src="../src/assets/myImage.png" alt="myImage" className="xl:aspect-square spect-auto bg-black object-contain  rounded-3xl xl:mb-0 mb-10" />
           <div className="relative flex flex-col xl:w-full">
             <p className="xl:text-[4em] text-3xl tracking-tight leading-tight text-white xl:mb-5 mb-8"><span className="
             text-gray-500">Book a call,</span> and I’ll take care of the rest</p>
