@@ -89,7 +89,7 @@ function Home() {
                 <p className="text-gray-600 tracking-tight leading-tight">Recognized as Excellence in Web Design and innovative Machine Learning Models</p>
             </div>
             <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
-                <img src="../public/WinnerPage.jpg" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
+                <img src="/WinnerPage.png" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
                 <button className="absolute top-2 right-3 p-3 bg-gray-500/50 rounded-xl xl:opacity-0 xl:group-hover:opacity-100 duration-300" >
                 <a href="../public/ASAAN-YATRA/AY.html" target="_blank">
                     <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
@@ -112,10 +112,10 @@ function Home() {
 
             <Achievement className={"relative p-2 group flex flex-col gap-2 text-xl justify-center items-center"} bgColor={"bg-gray-100"}>
             <button className="absolute scale-75 flex justify-between items-center bg-green-600 xl:-top-5 top-8 z-100 xl:scale-0 transition xl:group-hover:scale-100 ease-in-out duration-500 p-1 rounded-4xl text-white text-lg ">
-                <img src="../public/profile1.jpg" alt="#" className="w-9 border-2 border-green-600 rounded-4xl z-40" />
-                <img src="../public/profile2.jpg" alt="#" className="w-9 border-2 border-green-600 -translate-x-2 rounded-4xl z-30" />
-                <img src="../public/profile3.jpg" alt="#" className="w-9 border-2 border-green-600 -translate-x-4 rounded-4xl z-20" />
-                <img src="../public/profile4.avif" alt="#" className="w-9 border-2 border-green-600 -translate-x-6 rounded-4xl z-10" />
+                <img src="/profile1.png" alt="#" className="w-9 border-2 border-green-600 rounded-4xl z-40" />
+                <img src="/profile2.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-2 rounded-4xl z-30" />
+                <img src="/profile3.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-4 rounded-4xl z-20" />
+                <img src="/profile4.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-6 rounded-4xl z-10" />
                 <p className="mr-3 mb-1">Trusted by many</p>
             </button>
             <button className=" flex justify-between items-center w-full scale-100 transition duration-500 ease-in-out 

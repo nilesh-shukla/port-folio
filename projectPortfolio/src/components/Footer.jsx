@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom";
 import Button from './Button';
+import myImage from "../assets/myImage2.png"
 
 function Footer() {
   return (
@@ -11,11 +12,11 @@ function Footer() {
         transition={{ duration: 0.3, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.1 }}
         id="Projects"
-        className="xl:px-40 xl:py-35 p-4 font-isans bg-[url('./assets/background.webp')]"
+        className="xl:px-40 xl:py-10 p-4 font-isans bg-[url('./assets/background.webp')]"
       >
-        <div className="flex xl:flex-row flex-col gap-12">
-          <img src="../src/assets/myImage.png" alt="myImage" className="xl:aspect-square spect-auto bg-black object-contain  rounded-3xl xl:mb-0 mb-10" />
-          <div className="relative flex flex-col xl:w-full">
+        <div className="relative grid xl:grid-cols-2 grid-cols-1 gap-12">
+          <img src={myImage} alt="myImage" className="opacity-80 aspect-auto bg-transparent justify-center items-center object-center rounded-3xl xl:mb-0 mb-10" />
+          <div className="relative m-auto flex flex-col xl:w-full">
             <p className="xl:text-[4em] text-3xl tracking-tight leading-tight text-white xl:mb-5 mb-8"><span className="
             text-gray-500">Book a call,</span> and I’ll take care of the rest</p>
             <Link to="/bookacall" onClick={() => setIsOpen(false)}>
