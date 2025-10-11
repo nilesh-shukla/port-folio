@@ -6,7 +6,8 @@ import imgProject2 from "../assets/india_tour.jpg";
 import imgProject3 from "../assets/leave_form.jpg";
 import imgProject4 from "../assets/CarbonWisePoster.jpg"
 import imgProject5 from "../assets/cardioVision-image.png";
-import imgProject6 from "../assets/VanMitra.png"
+import imgProject6 from "../assets/Preptera.png"
+import imgProject7 from "../assets/VanMitra.png"
 
 
 function Work() {
@@ -35,7 +36,7 @@ function Work() {
 
             <Cards imgName={imgProject6} projectName="Preptera" textColor={""}/>
 
-            <Cards imgName={imgProject6} projectName="VanMitra" textColor={""}/>
+            <Cards imgName={imgProject7} projectName="VanMitra" textColor={""}/>
 
             {/* <div className="xl:col-span-2">
               <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
