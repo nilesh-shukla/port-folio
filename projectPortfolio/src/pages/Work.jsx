@@ -5,7 +5,8 @@ import imgProject1 from "../assets/AI.jpg";
 import imgProject2 from "../assets/india_tour.jpg";
 import imgProject3 from "../assets/leave_form.jpg";
 import imgProject4 from "../assets/CarbonWisePoster.jpg"
-import imgProject5 from "../assets/cardioVision-image.png"
+import imgProject5 from "../assets/cardioVision-image.png";
+import imgProject6 from "../assets/VanMitra.png"
 
 
 function Work() {
@@ -30,9 +31,13 @@ function Work() {
                 
             <Cards imgName={imgProject3} projectName="LeavePoint"/>
 
-            <div className="xl:col-span-2">
+            <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
+
+            <Cards imgName={imgProject6} projectName="VanMitra" textColor={""}/>
+
+            {/* <div className="xl:col-span-2">
               <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
-            </div>
+            </div> */}
 
           </div>
 
