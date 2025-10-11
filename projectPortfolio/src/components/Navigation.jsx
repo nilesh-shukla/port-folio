@@ -74,9 +74,9 @@ function Navigation() {
                 }
               }}
             >
-              <li><Link onClick={() => setIsOpen(flase)} to="/Work">Work</Link></li>
-              <li><Link onClick={() => setIsOpen(flase)} to="/About">About</Link></li>
-              <li><Link onClick={() => setIsOpen(flase)} to="/Contact">Contact</Link></li>
+              <li><Link onClick={() => setIsOpen(false)} to="/Work">Work</Link></li>
+              <li><Link onClick={() => setIsOpen(false)} to="/About">About</Link></li>
+              <li><Link onClick={() => setIsOpen(false)} to="/Contact">Contact</Link></li>
               <li className="flex text-gray-500 gap-4">
                 <button className="border p-3 rounded-2xl border-gray-400">
                   <a href="https://x.com/NileshS32355762">
