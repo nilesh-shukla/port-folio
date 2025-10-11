@@ -36,11 +36,9 @@ function Work() {
 
             <Cards imgName={imgProject6} projectName="Preptera" textColor={""}/>
 
-            <Cards imgName={imgProject7} projectName="VanMitra" textColor={""}/>
-
-            {/* <div className="xl:col-span-2">
-              <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
-            </div> */}
+            <div className="xl:col-span-2">
+              <Cards imgName={imgProject7}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
+            </div>
 
           </div>
 
