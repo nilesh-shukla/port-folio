@@ -31,7 +31,9 @@ function Work() {
                 
             <Cards imgName={imgProject3} projectName="LeavePoint"/>
 
-            <Cards imgName={imgProject5}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
+            <Cards imgName={imgProject5}  projectName="CardioVision" />
+
+            <Cards imgName={imgProject6} projectName="Preptera" textColor={""}/>
 
             <Cards imgName={imgProject6} projectName="VanMitra" textColor={""}/>
 
