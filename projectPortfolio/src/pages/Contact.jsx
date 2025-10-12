@@ -151,7 +151,7 @@ function Contact() {
             </div>
           </div>
           <Link to="/bookacall" onClick={() => setIsOpen(false)}>
-            <Button className={"bg-[#F7F7F7] w-full text-md tracking-tight py-3 rounded-2xl text-black border-gray-300 border-1 hover:bg-gray-200 hover:cursor-pointer duration-300"}>Book a Call</Button>
+            <Button buttonName={"Book a Call"} className={"bg-[#F7F7F7] w-full text-md tracking-tight py-3 rounded-2xl text-black border-gray-300 border-1 hover:bg-gray-200 hover:cursor-pointer duration-300"}/>
           </Link>
         </div>
 
