@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Stack({className, textColor, titleColor, image, title, description}) {
+function Stack({className, textColor, titleColor, image, title, description, imgColor}) {
   return (
     <div className={`flex items-center gap-4 px-3 py-4 font-isans rounded-3xl ${className}`}>
         <div className='w-15 h-15 '>
-          <img src={image} alt="Image" className='rounded-xl object-cover' />
+          <img src={image} alt="Image" className={`${imgColor} rounded-xl object-cover`} />
         </div>
         <div className='flex flex-col gap-1'>
             <h1 className={`text-xl tracking-tight ${titleColor}`}>{title}</h1>

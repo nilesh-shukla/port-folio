@@ -14,7 +14,7 @@ function Footer() {
         id="Projects"
         className="xl:px-40 xl:py-10 p-4 font-isans bg-[url('./assets/background.webp')]"
       >
-        <div className="relative grid xl:grid-cols-2 grid-cols-1 gap-12">
+        <div className="relative grid xl:grid-cols-2 grid-cols-1 gap-20">
           <img src={myImage} alt="myImage" className="opacity-80 aspect-auto bg-transparent justify-center items-center object-center rounded-3xl xl:mb-0 mb-10" />
           <div className="relative m-auto flex flex-col xl:w-full">
             <p className="xl:text-[4em] text-3xl tracking-tight leading-tight text-white xl:mb-5 mb-8"><span className="
@@ -24,10 +24,10 @@ function Footer() {
             </Link>
             <div className="grid xl:grid-cols-3 grid-cols-2 gap-6 mt-[10vh] text-white">
               <div className="flex flex-col gap-2">
-                <a href="#" className="hover:text-[#6C7179] duration-300">Home</a>
-                <a href="#" className="hover:text-[#6C7179] duration-300">Works</a>
-                <a href="#" className="hover:text-[#6C7179] duration-300">About</a>
-                <a href="#" className="hover:text-[#6C7179] duration-300">Contact</a>
+                <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#6C7179] duration-300">Home</Link>
+                <Link to="/work" onClick={() => setIsOpen(false)} className="hover:text-[#6C7179] duration-300">Works</Link>
+                <Link to="/about" onClick={() => setIsOpen(false)} className="hover:text-[#6C7179] duration-300">About</Link>
+                <Link to="/contact" onClick={() => setIsOpen(false)} className="hover:text-[#6C7179] duration-300">Contact</Link>
               </div>
               <div className="flex flex-col gap-2">
                 <a href="https://x.com/NileshS32355762" className="hover:text-[#6C7179] duration-300 ">{"X(Twitter)"}</a>

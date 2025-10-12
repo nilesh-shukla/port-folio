@@ -4,16 +4,15 @@ import Experience from "../components/Experience";
 import Stack from "../components/Stack";
 import Button from "../components/Button";
 import FAQ from "../components/FAQ";
-import AboutPeople from "../components/AboutPeople";
 
 import aboutImg from "../assets/AboutImg.jpg"
-import interImg from "../assets/interImg.avif"
-import Collab from "../assets/gcollab.webp"
+import Collab from "../assets/jupyter.png"
 import JS from "../assets/JS.webp"
 import Discord from "../assets/discord.jpeg"
-import Gpay from "../assets/gpay.png"
+import NodeJS from "../assets/nodeJS.webp"
 import LIn from "../assets/linked.avif"
 import GitHub from "../assets/github.png"
+import pencilImg from "../assets/pencilImg.png"
 
 function About() {
   return (
@@ -22,26 +21,15 @@ function About() {
         className="font-inter xl:mt-auto mt-25"
       >
         <div className="xl:p-45 md:px-8 md:py-0 p-6 font-inter">
-          <h1 className="xl:text-[2.6em] text-3xl tracking-tighter xl:leading-12 leading-tight mb-12" style={{fontWeight : 500}}><span className="text-gray-500">Nilesh Shukla blends data-driven insights,<br className="xl:block hidden" /> and dynamic experiences</span> to build intelligent <br className="xl:block hidden" /> and impactful digital solutions</h1>
+          <h1 className="xl:text-[2.6em] text-3xl tracking-tighter xl:leading-12 leading-tight mb-12" style={{fontWeight : 500}}><span className="text-gray-500">I blend data-driven insights,<br className="xl:block hidden" /> and dynamic experiences</span> to build intelligent <br className="xl:block hidden" /> and impactful digital solutions</h1>
 
           <div className="flex xl:flex-row flex-col gap-2">
 
-            <div className="relative xl:order-1 order-2 group xl:w-[38%] w-full xl:h-[57vh] h-full bg-[#f4f4f4] xl:p-5 p-2 rounded-4xl overflow-hidden">
-
-              {/* Fading effect at top and */}
-              <div className="hidden xl:block absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-300 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out z-20"/>
-              <div className="hidden xl:block absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-300 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-20"/>
-
-              {/* People */}
-              <div className="flex flex-col xl:group-hover:-translate-y-95 gap-3 transition-all duration-500 ease-in-out">
-                <AboutPeople image={interImg} name={"Sarah T"} position={"Founder of NovaTech"} thoughts={"Working with Nilesh was a game-changer for our product. His ability to merge strategy with stunning visuals made our platform not only beautiful but incredibly user-friendly"} />
-                <AboutPeople image={interImg} name={"James Miller"} position={"Marketing Direcor at Planza"} thoughts={"Nilesh's branding work gave our startup a distinct identity that truly resonates with our audience. His designs are not only visually compelling but strategically impactful"} />
-                <AboutPeople image={interImg} name={"Roysid Qoim"} position={"Founder of EchoWear"} thoughts={"From concept to execution, Nilesh delivered exceptional design solutions that improved our user engagement. His creativity and professionalism make him a trusted partner"} />
-                <AboutPeople image={interImg} name={"Emily Foster"} position={"Product Head at VeroBank"} thoughts={"Nilesh doesn’t just design; he solves problems. His strategic approach and design thinking helped us create an intuitive, high-performing fintech platform"} />
-                <AboutPeople image={interImg} name={"David Reynolds"} position={"CEO of Horizon"} thoughts={"Nilesh doesn’t just design; he solves problems. His strategic approach and design thinking helped us create an intuitive, high-performing fintech platform"} /> 
-              </div>
+            <div className="hidden xl:block xl:order-1 order-2 w-full xl:w-[38%] rounded-2xl p-5">
+                <img src={pencilImg} className="rounded-2xl"/>
             </div>
 
+            {/* Imagery */}
             <div className="xl:flex-1 w-full xl:w-[55%] xl:h-auto h-[40vh] xl:order-2 order-1 rounded-4xl">
               <img src={aboutImg} className="rounded-4xl h-full object-cover"/>
             </div>
@@ -78,11 +66,11 @@ function About() {
         <div className="xl:px-45 md:px-7 px-4">
           <h1 className="text-black tracking-tight text-4xl mb-10">My stacks</h1>
           <div className="grid lg:grid-rows-3 lg:grid-cols-2 grid-rows-6 grid-cols-1 gap-2">
-            <Stack className="bg-[#7430F7] shadow-box z-50" textColor="text-white" titleColor="text-white" image={Collab} title="Google Collab" description="My space to explore and analyse bold ideas" />
-            <Stack className="bg-[#f7f7f7] z-10" textColor="text-[#979797]" image={Gpay} title="Google Pay" description="A smooth and secure solution for digital payments" />
+            <Stack className="bg-[#7430F7] shadow-box z-50" textColor="text-white" titleColor="text-white" image={Collab} imgColor={"bg-gray-200 p-1"} title="Jupyter" description="My space to explore and analyse bold ideas" />
+            <Stack className="bg-[#f7f7f7]" textColor="text-[#979797]" image={LIn} title="LinkedIn" description="The easiest way to hire me and collaborate on projects" />
             <Stack className="bg-[#f7f7f7] z-10" textColor="text-[#979797]" image={JS} title="Javascript" description="Powering the modern web with logic and interactivity" />
             <Stack className="bg-[#f7f7f7]" textColor="text-[#979797]" image={Discord} title="Discord" description="Where I share insights, tips, and Framer resources" />
-            <Stack className="bg-[#f7f7f7]" textColor="text-[#979797]" image={LIn} title="LinkedIn" description="The easiest way to hire me and collaborate on projects" />
+            <Stack className="bg-[#f7f7f7] z-10" textColor="text-[#979797]" image={NodeJS} imgColor={"bg-white p-1"} title="NodeJS" description="A smooth and secure solution for development" />
             <Stack className="bg-[#f7f7f7]" textColor="text-[#979797]" image={GitHub} title="GitHub" description="The place where I build and ship code together" />
           </div>
         </div>
@@ -117,4 +105,4 @@ function About() {
   )
 }
 
-export default About
+export default About;

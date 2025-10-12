@@ -37,7 +37,7 @@ function Work() {
             <Cards imgName={imgProject6} projectName="Preptera" textColor={""}/>
 
             <div className="xl:col-span-2">
-              <Cards imgName={imgProject7}  projectName="CardioVision" className={"xl:w-1/2 w-full mx-auto"} />
+              <Cards imgName={imgProject7}  projectName="VanMitra" className={"xl:w-1/2 w-full mx-auto"} />
             </div>
 
           </div>

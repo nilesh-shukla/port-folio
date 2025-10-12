@@ -10,7 +10,7 @@ import imgProject1 from "../assets/AI.jpg";
 import imgProject2 from "../assets/india_tour.jpg";
 import imgProject3 from "../assets/leave_form.jpg";
 import imgProject4 from "../assets/CarbonWisePoster.jpg"
-import clientImage from "../assets/group.jpg";
+import InImage from "../assets/linkedIn.png";
 import ml1 from "../assets/ml1.jpg";
 import ml2 from "../assets/ml2.webp";
 import ml3 from "../assets/ml3.png";
@@ -80,54 +80,51 @@ function Home() {
             className="grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-2 md:grid-rows-1 grid-rows-3 grid-cols-1 items-stretch xl:px-45 px-4 justify-center xl:gap-2.5 gap-2"
         >
             <Achievement className={"xl:block md:hidden block overflow-hidden group"} bgColor={"bg-gray-100"}>          
-            <div className="flex">
-                <h1 className="text-3xl font-sans font-bold mr-2">W.</h1>
-                <FontAwesomeIcon icon={faAward} className="text-3xl mt-1 text-yellow-400" />
-            </div> 
-            <div className="flex flex-col">
-                <h1 className="text-2xl tracking-tight font-inter mt-5">Awwwards Nominee</h1>
+                <div className="flex items-center gap-3 mb-2">
+                    <h1 className="text-2xl tracking-tight font-inter font-semibold">SIH Nominee..</h1>
+                    <FontAwesomeIcon icon={faAward} className="text-3xl text-yellow-400" />
+                </div> 
                 <p className="text-gray-600 tracking-tight leading-tight">Recognized as Excellence in Web Design and innovative Machine Learning Models</p>
-            </div>
-            <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
-                <img src="/WinnerPage.png" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
-                <button className="absolute top-2 right-3 p-3 bg-gray-500/50 rounded-xl xl:opacity-0 xl:group-hover:opacity-100 duration-300" >
-                <a href="../public/ASAAN-YATRA/AY.html" target="_blank">
-                    <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
-                </a>
-                </button>
-            </div>
+                <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
+                    <img src="/WinnerPage.png" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
+                    <button className="absolute top-2 right-3 p-3 bg-gray-500/50 rounded-xl xl:opacity-0 xl:group-hover:opacity-100 duration-300" >
+                    <a href="../public/ASAAN-YATRA/AY.html" target="_blank">
+                        <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
+                    </a>
+                    </button>
+                </div>
             </Achievement>
 
-            <Achievement className={"shadow-box z-10"} bgColor={"bg-black"}>
-            <FontAwesomeIcon icon={faQuoteRight} className="text-4xl text-gray-600" />
-            <p className="text-white text-2xl mt-2 font-inter tracking-tight">Nilesh’s design expertise goes beyond aesthetics—he crafts experiences that truly connect with users. A great collaborator and a problem-solver at heart</p>
-            <div className="flex gap-3 xl:mt-30 mt-60">
-                <img src={clientImage} alt="client"  className="w-8 h-8 mt-2 rounded-lg"/>
-                <div className="flex flex-col">
-                <p className="text-white">Divyanshu Chaubey</p>
-                <p className="text-gray-500">Founder at Nexatech</p>
+            <Achievement className={"shadow-box z-10 group flex flex-col text-left"} bgColor={"bg-black"}>
+                <FontAwesomeIcon icon={faQuoteRight} className="text-4xl text-gray-600 mr-auto" />
+                <p className="text-white text-2xl mt-2 font-inter tracking-tight">As an IT undergraduate at ABES Engineering College, Ghaziabad, I am passionate about leveraging technology to solve real-world problems. My academic journey<span className="text-gray-300 text-xl">....</span></p>
+                <div className="flex items-center gap-3 ml-auto xl:mt-30 mt-60">
+                    <img src={InImage} alt="client"  className="w-8 h-8 rounded-lg"/>
+                    <a href="https://www.linkedin.com/in/nilesh-shukla21" className="text-lg text-gray-400 transition-all duration-500" target="blank">
+                    LinkedIn
+                    <FontAwesomeIcon icon={faArrowRight} className="-rotate-45 ml-0.5  text-xs" />
+                    </a>
                 </div>
-            </div>
             </Achievement>
 
             <Achievement className={"relative p-2 group flex flex-col gap-2 text-xl justify-center items-center"} bgColor={"bg-gray-100"}>
-            <button className="absolute scale-75 flex justify-between items-center bg-green-600 xl:-top-5 top-8 z-100 xl:scale-0 transition xl:group-hover:scale-100 ease-in-out duration-500 p-1 rounded-4xl text-white text-lg ">
-                <img src="/profile1.png" alt="#" className="w-9 border-2 border-green-600 rounded-4xl z-40" />
-                <img src="/profile2.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-2 rounded-4xl z-30" />
-                <img src="/profile3.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-4 rounded-4xl z-20" />
-                <img src="/profile4.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-6 rounded-4xl z-10" />
-                <p className="mr-3 mb-1">Trusted by many</p>
-            </button>
-            <button className=" flex justify-between items-center w-full scale-100 transition duration-500 ease-in-out 
-            -translate-y-4 xl:translate-y-12 xl:group-hover:translate-y-0 xl:group-hover:scale-100 z-30 bg-white rounded-2xl p-3 shadow-md xl:group-hover:shadow-none ">4+ Projects completed
-                <FontAwesomeIcon icon={faCircleCheck} className="text-xl text-purple-500" />
-            </button>
-            <button className=" flex justify-between items-center w-full xl:scale-95 scale-100 text-left transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:scale-100 z-20 bg-white rounded-2xl p-3 shadow-md group-hover:shadow-none ">2+ Years Experience
-                <FontAwesomeIcon icon={faRocket} className="text-xl text-green-500" />
-            </button>
-            <button className=" flex justify-between items-center w-full xl:scale-90 scale-100 text-left transition duration-500 ease-in-out translate-y-4 xl:-translate-y-12 group-hover:translate-y-0 group-hover:scale-100 z-10 bg-white rounded-2xl p-3 backdrop-blur-lg group-hover:shadow-none ">10+ Happy Clients
-                <FontAwesomeIcon icon={faFaceSmile} className="text-xl text-yellow-500" />
-            </button>
+                <button className="absolute scale-75 flex justify-between items-center bg-green-600 xl:-top-5 top-8 z-100 xl:scale-0 transition xl:group-hover:scale-100 ease-in-out duration-500 p-1 rounded-4xl text-white text-lg ">
+                    <img src="/profile1.png" alt="#" className="w-9 border-2 border-green-600 rounded-4xl z-40" />
+                    <img src="/profile2.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-2 rounded-4xl z-30" />
+                    <img src="/profile3.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-4 rounded-4xl z-20" />
+                    <img src="/profile4.png" alt="#" className="w-9 border-2 border-green-600 -translate-x-6 rounded-4xl z-10" />
+                    <p className="mr-3 mb-1">Trusted by many</p>
+                </button>
+                <button className=" flex justify-between items-center w-full scale-100 transition duration-500 ease-in-out 
+                -translate-y-4 xl:translate-y-12 xl:group-hover:translate-y-0 xl:group-hover:scale-100 z-30 bg-white rounded-2xl p-3 shadow-md xl:group-hover:shadow-none ">4+ Projects completed
+                    <FontAwesomeIcon icon={faCircleCheck} className="text-xl text-purple-500" />
+                </button>
+                <button className=" flex justify-between items-center w-full xl:scale-95 scale-100 text-left transition duration-500 ease-in-out group-hover:translate-y-0 group-hover:scale-100 z-20 bg-white rounded-2xl p-3 shadow-md group-hover:shadow-none ">2+ Years Experience
+                    <FontAwesomeIcon icon={faRocket} className="text-xl text-green-500" />
+                </button>
+                <button className=" flex justify-between items-center w-full xl:scale-90 scale-100 text-left transition duration-500 ease-in-out translate-y-4 xl:-translate-y-12 group-hover:translate-y-0 group-hover:scale-100 z-10 bg-white rounded-2xl p-3 backdrop-blur-lg group-hover:shadow-none ">10+ Happy Clients
+                    <FontAwesomeIcon icon={faFaceSmile} className="text-xl text-yellow-500" />
+                </button>
             </Achievement>
         </motion.div>
 
@@ -180,9 +177,9 @@ function Home() {
                     <div className="flex flex-col gap-4">
                         <StepBullet number={1} heading={"Book A Call"} paragraph={"Let’s start with a conversation! We’ll discuss your goals, ideas, and how I can help bring them to life. This is where we align expectations and ensure a great fit"}/>
                         <StepBullet number={2} heading={"Project Brief"} paragraph={"Once we’re on the same page, we’ll define the project scope, timeline, and deliverables. A structured brief ensures a smooth and efficient process"} />
-                        <StepBullet number={3} heading={"Develop"} paragraph={"This is where the magic happens! I’ll craft thoughtful designs and refine them based on feedback, ensuring the final outcome meets your vision and goals"}/>
-                        <StepBullet number={4} heading={"Deliver"} paragraph={"The final product is polished and ready to go. Whether it’s a brand identity, UI/UX design, or a Framer website, you’ll receive all the necessary files and guidance for a seamless handoff"}/>
-                        <StepBullet number={5} heading={"Support"} paragraph={"Enjoy one month of free support after project delivery. I’ll be available to answer questions, make minor adjustments, and ensure everything runs smoothly"}/>
+                        <StepBullet number={3} heading={"Develop"} paragraph={"This is where ideas come alive! I craft smart, data-driven experiences and refine every detail to bring your vision to life."}/>
+                        <StepBullet number={4} heading={"Deliver"} paragraph={"The final creation is refined and launch-ready. From visuals to interactions, you’ll receive everything needed for a smooth, effortless handoff"}/>
+                        <StepBullet number={5} heading={"Support"} paragraph={"Enjoy the project after delivery. I’ll be available to answer questions, make minor adjustments, and ensure everything runs smoothly"}/>
                     </div>
                 </div>
             </div>
@@ -215,7 +212,7 @@ function Home() {
                     <FAQ solution={"The timeline depends on the project’s scope and complexity. ML projects typically take 3–6 weeks, depending on the data, model complexity, and deployment needs. Websites can take from 2–4 weeks based on the number of pages and interactions. I’ll provide a detailed timeline after reviewing the project brief."}>What's your typical project timeline?</FAQ>
                     <FAQ solution={"Yes! I believe in collaboration and refining the work to match your vision. Each project includes a set number of revision rounds, which we’ll define in the project scope"}>Do you offer revisions?</FAQ>
                     <FAQ solution={"I strive to ensure that all clients are satisfied with the final result. If you’re not happy, I’ll work with you to make it right."}>What if I'm not satisfied with the final result?</FAQ>
-                    <FAQ solution={"Absolutely! If you already have brand guidelines, I’ll ensure the designs and functionalities align with your established identity while still bringing fresh creativity to the project"}>Can you work with my existing brand guidelines?</FAQ>
+                    <FAQ solution={"I work on a variety of projects such as predictive analytics, image classification, natural language processing (NLP), recommendation systems, and AI-driven automation. In ddition to this I try to provide support with WEB design."}>What types of projects do you work on?</FAQ>
                     <FAQ solution={"Yes, I provide one month of post-project support to address any questions or minor adjustments you may need."}>Do you provide post-project support?</FAQ>
                     <FAQ solution={"The best way to reach me is via email or through the contact form on my website. I aim to respond within 24 hours."}>What’s the best way to reach you?</FAQ>
                     </div>

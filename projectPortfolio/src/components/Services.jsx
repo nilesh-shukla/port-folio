@@ -17,7 +17,7 @@ function Services({ className, customClass, children, headingName, icon, iconCol
                     <FontAwesomeIcon icon={icon} className={`${iconColor}`} />
                 </span>
                 <span className='absolute top-full left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:top-1/2 group-hover:-translate-y-1/2'>
-                    <FontAwesomeIcon icon={faArrowRight} className={`${iconColor}`}/>
+                    <FontAwesomeIcon icon={faArrowRight} className={`${iconColor} -rotate-45`}/>
                 </span>
             </button>
         </div>
