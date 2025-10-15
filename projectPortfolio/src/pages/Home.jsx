@@ -10,6 +10,7 @@ import imgProject1 from "../assets/AI.jpg";
 import imgProject2 from "../assets/india_tour.jpg";
 import imgProject3 from "../assets/leave_form.jpg";
 import imgProject4 from "../assets/CarbonWisePoster.jpg"
+import bugsWork from "../assets/bugsWork.png"
 import InImage from "../assets/linkedIn.png";
 import ml1 from "../assets/ml1.jpg";
 import ml2 from "../assets/ml2.webp";
@@ -59,7 +60,7 @@ function Home() {
                 </div> 
                 <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 py-10'>
 
-                    <Cards imgName={imgProject1} projectName="BugsSmith" textColor={"text-white"} describe={"A platform that uses intelligence to verify identities and detects suspicious activity to prevent fake profiles and ensure authentic online interactions"}/>
+                    <Cards imgName={imgProject1} workImg={bugsWork} projectName="BugsSmith" textColor={"text-white"} describe={"A platform that uses intelligence to verify identities and detects suspicious activity to prevent fake profiles and ensure authentic online interactions"}/>
                     
                     <Cards imgName={imgProject4}  projectName="CarbonWise" textColor={"text-black"} describe={"An AI-powered platform providing personalized insights to help households monitor, reduce, and control their carbon footprint effectively"}/> 
                                         
