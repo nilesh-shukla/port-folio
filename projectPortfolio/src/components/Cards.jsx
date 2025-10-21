@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import ProjectDescription from "./projectDescription.jsx"
+import ProjectWindow from "./ProjectWindow";
 
 function Cards({textColor, className, projectName, workImage, imgName, describe}) {
   const [showBox, setShowBox] = useState(false);
@@ -13,7 +13,7 @@ function Cards({textColor, className, projectName, workImage, imgName, describe}
         <p className={`${textColor} font-oregano text-base text-center`}>{describe}</p>
       </div>    
 
-      {showBox && <ProjectDescription workImg={workImage} />}
+      {showBox && <ProjectWindow workImg={workImage} />}
     </div>
   )
 }

@@ -60,7 +60,7 @@ function Home() {
                 </div> 
                 <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 py-10'>
 
-                    <Cards imgName={imgProject1} workImg={bugsWork} projectName="BugsSmith" textColor={"text-white"} describe={"A platform that uses intelligence to verify identities and detects suspicious activity to prevent fake profiles and ensure authentic online interactions"}/>
+                    <Cards imgName={imgProject1} workImage={bugsWork} projectName="BugsSmith" textColor={"text-white"} describe={"A platform that uses intelligence to verify identities and detects suspicious activity to prevent fake profiles and ensure authentic online interactions"}/>
                     
                     <Cards imgName={imgProject4}  projectName="CarbonWise" textColor={"text-black"} describe={"An AI-powered platform providing personalized insights to help households monitor, reduce, and control their carbon footprint effectively"}/> 
                                         
@@ -86,14 +86,14 @@ function Home() {
                     <FontAwesomeIcon icon={faAward} className="text-3xl text-yellow-400" />
                 </div> 
                 <p className="text-gray-600 tracking-tight leading-tight">Recognized as Excellence in Web Design and innovative Machine Learning Models</p>
-                <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
-                    <img src="/WinnerPage.png" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
-                    <button className="absolute top-2 right-3 p-3 bg-gray-500/50 rounded-xl xl:opacity-0 xl:group-hover:opacity-100 duration-300" >
-                    <a href="../public/ASAAN-YATRA/AY.html" target="_blank">
-                        <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
-                    </a>
-                    </button>
-                </div>
+                <a href="https://bugssmith.onrender.com" target="_blank">
+                    <div className="relative h-[200px] transition-transform duration-500 ease-in-out translate-y-10 xl:group-hover:-translate-y-[40%] group-hover:cursor-pointer ">
+                        <img src="/WinnerPage.png" className=" overflow-hidden rounded-xl border-none group-hover:brightness-70 duration-300 pointer-events-none " alt="WinnerPage" />
+                        <button className="absolute top-2 right-3 p-3 bg-gray-500/50 rounded-xl xl:opacity-0 xl:group-hover:opacity-100 duration-300" >
+                            <FontAwesomeIcon icon={faRightToBracket} className=" text-xl text-white " />
+                        </button>
+                </div>   
+                </a>
             </Achievement>
 
             <Achievement className={"shadow-box z-10 group flex flex-col text-left"} bgColor={"bg-black"}>

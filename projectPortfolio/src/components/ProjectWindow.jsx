@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProjectDescription({projectName, projectDescription, workImg}) {
+function ProjectWindow({projectName, projectDescription, workImg}) {
   return (
       <div className="p-4 bg-gray-300 rounded-2xl grid grid-cols-2 gap-4 w-[50vh] ">
         <div className="flex items-center">
@@ -19,4 +19,4 @@ function ProjectDescription({projectName, projectDescription, workImg}) {
   )
 }
 
-export default ProjectDescription
+export default ProjectWindow
